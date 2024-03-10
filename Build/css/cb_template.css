@@ -18382,7 +18382,7 @@ nav#menu-main {
             color: #ff7f00; } }
 
 footer {
-  background: #d7d3eb;
+  background: #18511A;
   padding: 50px 0 10px 0; }
   footer .menu-footer {
     text-align: center;
@@ -18401,7 +18401,7 @@ footer {
         footer .menu-footer__list-item:last-child:after {
           content: ""; }
         footer .menu-footer__list-item-link {
-          color: #000;
+          color: #fff;
           text-decoration: none; }
           footer .menu-footer__list-item-link:hover {
             color: #ff7f00; }
