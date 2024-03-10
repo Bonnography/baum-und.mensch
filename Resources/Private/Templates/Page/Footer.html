@@ -5,24 +5,38 @@
         <section class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="footer-left"></div>
+                    <div class="col-md-4">
+                        <div class="footer-left">
+                            <h3>Kontakt</h3>
+                            <p>Baum und Mensch</p>
+                            <p>Sandro Vierke</p>
+                            <p>Simsonstraße 9</p>
+                            <p>04107 Leipzig</p>
+                            <br/>
+                            <p>Telefon: 0341 2284267</p>
+                            <p>Mobil: 0179 3207990</p>
+                            <p>E-Mail: kontakt@baum-und-mensch.de</p>
+                        </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="footer-middle">
+                            <h3>Öffnungszeiten</h3>
+                            <p>Mo-Sa von 07:30 – 17:30 Uhr</p>
+                            <p>So geschlossen</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
                         <div class="footer-right">
-
+                            <f:cObject typoscriptObjectPath="lib.menu-footer" />
+                            <f:format.raw>{menu-language}</f:format.raw>
                         </div>
                     </div>
                 </div>
                 <div class="row align-items-center copyright-menu-section">
-                    <div class="col-lg-5 order-2 order-lg-1 text-center text-lg-start">
+                    <div class="col-lg-12 text-center">
                         <div id="copyright">
                             <f:format.raw>{copyright}</f:format.raw>
                         </div>
-                    </div>
-                    <div class="col-lg-7 order-1 order-lg-2 text-lg-end">
-                        <f:cObject typoscriptObjectPath="lib.menu-footer" />
-                        <f:format.raw>{menu-language}</f:format.raw>
                     </div>
                 </div>
             </div>
