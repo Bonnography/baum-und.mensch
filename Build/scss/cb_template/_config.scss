@@ -27,6 +27,7 @@ $main-bright-color: #d7d3eb;
 $hover-color: #ff7f00;
 $accent-color: #ff0000;
 $background-orange: #ffe5cc;
+$text-color: #4a4a4a;
 
 
 ul {
@@ -44,6 +45,7 @@ body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  color: $text-color;
   padding-top: 80px;
 
 

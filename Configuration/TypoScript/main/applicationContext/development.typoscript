@@ -21,9 +21,7 @@ company {
 
 page {
     # cat=basic/Page/10; type=int+; label=Ordner Footermenu
-    menuFooter = 6
-    # cat=basic/Page/20; type=int+; label=News Listview
-    newsListViewPid = 18
+    menuFooter = 3
     # cat=basic/Page/30; type=int+; label=Meta Menu
     metaMenu = 14
 }
