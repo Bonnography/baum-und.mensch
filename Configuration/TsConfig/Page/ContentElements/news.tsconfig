@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        news {
+            iconIdentifier = actions-document-localize
+            title = LLL:EXT:cb_template/Resources/Private/Language/locallang_tca.xlf:tt_content.news.wizard.title
+            description = LLL:EXT:cb_template/Resources/Private/Language/locallang_tca.xlf:tt_content.news.wizard.description
+            tt_content_defValues {
+                CType = news
+            }
+        }
+    }
+    show := addToList(news)
+}

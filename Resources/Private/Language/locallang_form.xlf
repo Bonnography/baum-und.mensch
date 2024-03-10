@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-08-03UTC08:39:270">
+        <header>
+            <authorName>Benjamin Bomberg</authorName>
+            <authorEmail>benjamin.bomberg@codebomb-websolutions.de</authorEmail>
+        </header>
+        <body>
+           <trans-unit id="element.firstname.properties.label">
+               <source>Firstname</source>
+           </trans-unit>
+           <trans-unit id="element.firstname.properties.placeholder">
+               <source>Firstname</source>
+           </trans-unit>
+           <trans-unit id="element.lastname.properties.label">
+               <source>Lastname</source>
+           </trans-unit>
+           <trans-unit id="element.lastname.properties.placeholder">
+               <source>Lastname</source>
+           </trans-unit>
+           <trans-unit id="element.lastname-contact-form.properties.placeholder">
+               <source>Lastname*</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Sopran">
+               <source>Soprano</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Alt">
+               <source>Alto</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Bariton">
+               <source>Baritone</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Violine-1">
+               <source>Violin 1</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Violine-2">
+               <source>Violin 2</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Bratsche">
+               <source>Viola</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Kontrabass">
+               <source>Contrabass</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.prependOptionLabel">
+               <source>Please select</source>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.label">
+               <source>Register | vocal group</source>
+           </trans-unit>
+           <trans-unit id="element.birthdate.properties.label">
+               <source>Date of birth</source>
+           </trans-unit>
+           <trans-unit id="experience-radio.email.label">
+              <source>Choir/ensemble or orchestra experience: </source>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.label">
+               <source>Do you already have choir/ensemble or orchestra experience?</source>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.options.0">
+               <source>Yes</source>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.options.1">
+               <source>No</source>
+           </trans-unit>
+           <trans-unit id="element.message-contact-form.properties.placeholder">
+              <source>Your message*</source>
+          </trans-unit>
+           <trans-unit id="element.message-contact-form.properties.label">
+              <source>Your message</source>
+          </trans-unit>
+           <trans-unit id="element.message.properties.label">
+              <source>Please tell us briefly about your previous experience.</source>
+          </trans-unit>
+           <trans-unit id="element.email.properties.label">
+              <source>E-mail</source>
+          </trans-unit>
+           <trans-unit id="element.email-contact-form.properties.placeholder">
+              <source>E-mail*</source>
+          </trans-unit>
+           <trans-unit id="element.email.properties.placeholder">
+              <source>E-mail</source>
+          </trans-unit>
+           <trans-unit id="element.phone.properties.label">
+              <source>Phone number</source>
+          </trans-unit>
+           <trans-unit id="element.phone.properties.placeholder">
+              <source>Phone number</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.label">
+              <source>How did you discover "amici musicae"?</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.1">
+              <source>through friends, family, acquaintances and/or relatives</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.2">
+              <source>I attended a concert of the "amici musicae"</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.3">
+              <source>via online search engine</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.4">
+              <source>through Facebook, Instagram &amp; Co.</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.5">
+              <source>through the radio, Spotify or one of our CDs</source>
+          </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.6">
+              <source>other</source>
+          </trans-unit>
+           <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+              <source>Submit</source>
+          </trans-unit>
+           <trans-unit id="element.consent-declaration.properties.value">
+               <source>I have read the <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/en/privacy">privacy policy</a> and agree to its content.]]></source>
+           </trans-unit>
+           <trans-unit id="element.consent-declaration.properties.label">
+               <source>I have read the <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/en/privacy">privacy policy</a> and agree to its content.]]></source>
+           </trans-unit>
+           <trans-unit id="form.confirmation.yourMessage">
+             <source>Your message</source>
+         </trans-unit>
+           <trans-unit id="form.confirmation.contactForm.header">
+             <source>Thank you for your message</source>
+         </trans-unit>
+           <trans-unit id="form.confirmation.contactForm.data">
+             <source>The following data was successfully transmitted:</source>
+         </trans-unit>
+           <trans-unit id="form.confirmation.registrationForm.header">
+             <source>Thank you for your registration</source>
+         </trans-unit>
+           <trans-unit id="form.confirmation.registrationForm.data">
+             <source>The following data was successfully transmitted:</source>
+         </trans-unit>
+        </body>
+    </file>
+</xliff>

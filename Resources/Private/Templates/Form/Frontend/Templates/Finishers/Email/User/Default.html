@@ -1,0 +1,73 @@
+{namespace formvh=TYPO3\CMS\Form\ViewHelpers}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+<p>
+    Vielen Dank, dass du mit uns Kontakt aufgenommen haben. Wir werden uns so schnell wie möglich bei dir melden.
+    <br />
+    Anbei deine übermittelten Daten:
+
+</p>
+<div class="confirmation_contact">
+
+    <p>
+        <f:if condition="{form.formState.formValues.firstname}">Name: {form.formState.formValues.firstname} <f:if condition="{form.formState.formValues.lastname}">{form.formState.formValues.lastname}</f:if><f:if condition="{form.formState.formValues.lastname-contact-form}">{form.formState.formValues.lastname-contact-form}</f:if></f:if>
+        <f:if condition="{form.formState.formValues.phone}"><br>Tel.: {form.formState.formValues.phone}</f:if>
+        <f:if condition="{form.formState.formValues.email}"><br>E-Mail: {form.formState.formValues.email}</f:if>
+        <f:if condition="{form.formState.formValues.email-contact-form}"><br>E-Mail: {form.formState.formValues.email-contact-form}</f:if>
+        <f:if condition="{form.formState.formValues.vocal-group}"><br><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.vocal-group.properties.label"/>: {form.formState.formValues.vocal-group}</f:if>
+        <f:if condition="{form.formState.formValues.birthdate}"><br><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.birthdate.properties.label"/>: <f:format.date format="%d. %B %Y">{form.formState.formValues.birthdate}</f:format.date></f:if>
+        <br />
+        <f:if condition="{form.formState.formValues.experience-radio} == '0'">
+            <f:then>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:experience-radio.email.label"/>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.experience-radio.properties.options.0"/>
+            </f:then>
+            <f:else>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:experience-radio.email.label"/>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.experience-radio.properties.options.1"/>
+            </f:else>
+        </f:if>
+        <f:if condition="{form.formState.formValues.message}">
+            <br />
+            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.yourExperience"/>{form.formState.formValues.message}
+        </f:if>
+    </p>
+
+    <f:if condition="{form.formState.formValues.message-contact-form}">
+        <p><strong><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.yourMessage"/></strong></p>
+        <p>{form.formState.formValues.message-contact-form}</p>
+    </f:if>
+
+    <f:if condition="{form.formState.formValues.discover-multi-checkbox}">
+        <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.discover-multi-checkbox.properties.label"/>:
+        <ul style="padding-left: 20px;">
+            <f:for each="{form.formState.formValues.discover-multi-checkbox}" as="multiCheckbox">
+                <li><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.discover-multi-checkbox.properties.options.{multiCheckbox}"/></li>
+            </f:for>
+        </ul>
+    </f:if>
+
+    <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
+        <f:if condition="{formValue.element.identifier} == 'consent-declaration'">
+            <f:if condition="{form.formState.formValues.consent-declaration} == 0">
+                <f:then><p><strong>Einwilligungserklärung:</strong> nein</p></f:then>
+                <f:else><p><strong>Einwilligungserklärung:</strong> <f:format.html><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.{formValue.element.identifier}.properties.label"/></f:format.html></p></f:else>
+            </f:if>
+        </f:if>
+    </formvh:renderAllFormValues>
+
+</div>
+<p>
+    Freundliche Grüße<br/>
+    amici musicae
+</p>
+
+
+</body>
+</html>

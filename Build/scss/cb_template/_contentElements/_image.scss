@@ -1,0 +1,56 @@
+.image-gallery {
+  &-row {
+    margin: 0 -20px;
+  }
+  &-item {
+    display: inline-flex;
+    padding: 0 20px;
+  }
+  img {
+    object-fit: fill;
+  }
+  &-items {
+    &-2, &-3 {
+      width: 50%;
+    }
+  }
+}
+
+@media screen and (min-width: 996px) {
+  .image-gallery {
+    &-item {
+      display: inline-flex;
+      padding: 0 20px;
+    }
+    img {
+      height: 200px;
+    }
+    &-items {
+      &-2 {
+        width: 50%;
+      }
+      &-3 {
+        width: 33.33%;
+        img {
+          height: 225px;
+        }
+      }
+    }
+
+    figure.image {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .image-gallery {
+    &-items {
+      &-3 {
+        img {
+          height: 225px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,209 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}" />
+        </f:render>
+    </f:if>
+    <f:switch expression="{data.inline_layout}">
+        <f:case value="0">
+            <f:render section="carousel" arguments="{_all}"/>
+        </f:case>
+        <f:case value="1">
+            <f:render section="twoColumns" arguments="{_all}"/>
+        </f:case>
+        <f:case value="2">
+            <f:render section="threeColumns" arguments="{_all}"/>
+        </f:case>
+    </f:switch>
+
+</f:section>
+<f:section name="carousel">
+
+    <div class="splide amici-carousel" id="splide">
+        <div class="splide__track">
+            <ul class="splide__list">
+                <f:for each="{inlineElements}" as="inlineElement" iteration="iterator">
+                    <li class="splide__slide">
+                        <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.bodytext}</f:format.html>
+                    </li>
+                </f:for>
+            </ul>
+        </div>
+    </div>
+</f:section>
+<f:section name="twoColumns">
+    <div class="row">
+        <f:for each="{inlineElements}" as="inlineElement">
+            <div class="col-12 col-md-6">
+                <div class="content-column-item">
+                    <f:if condition="{inlineElement.images}">
+                        <f:then>
+                            <f:for each="{inlineElement.images}" as="image">
+                                <f:media
+                                        class="img-fluid"
+                                        file="{image}"
+                                        width="{dimensions.width}"
+                                        height="{dimensions.height}"
+                                        alt="{image.alternative}"
+                                        title="{image.title}"
+                                        loading="{settings.media.lazyLoading}"
+                                        additionalAttributes="{srcset: '{f:uri.image(image: image, maxWidth: 768)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 990)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 1200)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 1440)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 1900)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                                />
+                            </f:for>
+                        </f:then>
+                    </f:if>
+                    <f:if condition="{inlineElement.inline_item_header}">
+                        <h3>{inlineElement.inline_item_header}</h3>
+                    </f:if>
+                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.bodytext}
+                    </f:format.html>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+<f:section name="threeColumns">
+    <div class="row">
+        <f:for each="{inlineElements}" as="inlineElement">
+            <div class="col-12 col-md-4">
+                <div class="content-column-item">
+                    <f:render section="inlineElement" arguments="{_all}"/>
+                </div>
+            </div>
+        </f:for>
+    </div>
+</f:section>
+<f:section name="inlineElement">
+    <f:if condition="{inlineElement.image_position} == 0">
+        <f:then>
+            <f:if condition="{inlineElement.images}">
+                <f:then>
+                    <f:for each="{inlineElement.images}" as="image">
+                        <f:if condition="{inlineElement.cta}">
+                            <f:then>
+                                <f:link.typolink parameter="{inlineElement.cta}">
+                                    <f:media
+                                            class="img-fluid"
+                                            file="{image}"
+                                            width="{dimensions.width}"
+                                            height="{dimensions.height}"
+                                            alt="{image.alternative}"
+                                            title="{image.title}"
+                                            loading="{settings.media.lazyLoading}"
+                                            additionalAttributes="{srcset: '
+                                            {f:uri.image(image: image, maxWidth: 375)} 375w,
+                                            {f:uri.image(image: image, maxWidth: 520)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 250)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 300)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 420)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 420)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                                    />
+                                </f:link.typolink>
+                            </f:then>
+                            <f:else>
+                                <f:media
+                                        class="img-fluid"
+                                        file="{image}"
+                                        width="{dimensions.width}"
+                                        height="{dimensions.height}"
+                                        alt="{image.alternative}"
+                                        title="{image.title}"
+                                        loading="{settings.media.lazyLoading}"
+                                        additionalAttributes="{srcset: '{f:uri.image(image: image, maxWidth: 768)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 990)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 1200)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 1440)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 1900)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                                />
+                            </f:else>
+                        </f:if>
+                    </f:for>
+                </f:then>
+            </f:if>
+            <f:if condition="{inlineElement.inline_item_header}">
+                <h3>{inlineElement.inline_item_header}</h3>
+            </f:if>
+            <f:if condition="{inlineElement.bodytext}">
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.bodytext}</f:format.html>
+            </f:if>
+            <f:if condition="{inlineElement.cta} && {inlineElement.cta_text}">
+                <f:link.typolink parameter="{inlineElement.cta}" class="btn btn-{f:if(condition: '{inlineElement.button_style} == 1', then: 'secondary', else: 'primary')}">
+                    {inlineElement.cta_text}
+                </f:link.typolink>
+            </f:if>
+        </f:then>
+        <f:else>
+            <f:if condition="{inlineElement.inline_item_header}">
+                <h3>{inlineElement.inline_item_header}</h3>
+            </f:if>
+            <f:if condition="{inlineElement.bodytext}">
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{inlineElement.bodytext}</f:format.html>
+            </f:if>
+            <f:if condition="{inlineElement.cta} && {inlineElement.cta_text}">
+                <f:link.typolink parameter="{inlineElement.cta}" class="btn btn-{f:if(condition: '{inlineElement.button_style} == 1', then: 'secondary', else: 'primary')}">
+                    {inlineElement.cta_text}
+                </f:link.typolink>
+            </f:if>
+            <f:if condition="{inlineElement.images}">
+                <f:then>
+                    <f:render section="image" arguments="{_all}"/>
+                </f:then>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
+<f:section name="image">
+    <f:for each="{inlineElement.images}" as="image">
+        <f:if condition="{inlineElement.cta}">
+            <f:then>
+                <f:link.typolink parameter="{inlineElement.cta}">
+                    <f:media
+                            class="img-fluid"
+                            file="{image}"
+                            width="{dimensions.width}"
+                            height="{dimensions.height}"
+                            alt="{image.alternative}"
+                            title="{image.title}"
+                            loading="{settings.media.lazyLoading}"
+                            additionalAttributes="{srcset: '{f:uri.image(image: image, maxWidth: 768)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 990)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 1200)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 1440)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 1900)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                    />
+                </f:link.typolink>
+            </f:then>
+            <f:else>
+                <f:media
+                        class="img-fluid"
+                        file="{image}"
+                        width="{dimensions.width}"
+                        height="{dimensions.height}"
+                        alt="{image.alternative}"
+                        title="{image.title}"
+                        loading="{settings.media.lazyLoading}"
+                        additionalAttributes="{srcset: '{f:uri.image(image: image, maxWidth: 768)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 990)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 1200)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 1440)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 1900)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                />
+            </f:else>
+        </f:if>
+    </f:for>
+</f:section>
+<f:section name="cta">
+
+</f:section>
+</html>

@@ -1,0 +1,12 @@
+#
+# TCEMAIN
+#
+TCEMAIN {
+    permissions{
+        userid = 1
+        groupid = 1
+        user = show,edit,delete,new,editcontent
+        group = show,edit,delete,new,editcontent
+        everybody = show
+    }
+}

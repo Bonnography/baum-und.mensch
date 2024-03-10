@@ -1,0 +1,110 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}" />
+        </f:render>
+    </f:if>
+
+    <f:if condition="{files}">
+        <div class="content-table content-table--full-width content-table--align-contents-right content-table--filelist">
+            <table class="content-table__main">
+                <thead class="content-table__head">
+                <tr class="content-table__row">
+                    <th class="content-table__cell content-table__cell--header"></th>
+                    <th class="content-table__cell content-table__cell--header"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:label.fileName" /></th>
+                    <th class="content-table__cell content-table__cell--header"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:label.fileSize" /></th>
+                    <th class="content-table__cell content-table__cell--header"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:label.fileType" /></th>
+                    <th class="content-table__cell content-table__cell--header"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:label.fileChanged" /></th>
+                    <th class="content-table__cell content-table__cell--header"></th>
+                </tr>
+                </thead>
+                <tbody class="content-table__body">
+                <f:for each="{files}" as="file" iteration="fileIterator">
+                    <f:render section="tableItem" arguments="{extension: file.extension, title: file.title, size: file.size, url: file.publicUrl, file: file}" />
+                </f:for>
+                </tbody>
+            </table>
+        </div>
+        <f:comment>
+            <ul class="ce-uploads content-downloads__list">
+                <f:for each="{files}" as="file" iteration="fileIterator">
+                    <li>
+                        <f:if condition="{data.uploads_type} == 1">
+                            <img src="{f:uri.resource(path: 'EXT:frontend/Resources/Public/Icons/FileIcons/{file.extension}.gif')}" alt="">
+                        </f:if>
+                        <f:if condition="{data.uploads_type} == 2">
+                            <f:if condition="{file.type} > 1">
+                                <f:if condition="{f:uri.image(src: 'file:{f:if(condition: file.originalFile, then: \'file:{file.originalFile.uid}\', else: \'file:{file.uid}\')}')} != '/'">
+                                    <f:then>
+                                        <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+                                        <f:media file="{file}" width="150" alt="{file.properties.alternative}" />
+                                        </a>
+                                    </f:then>
+                                    <f:else>
+                                        <img src="{f:uri.resource(path: 'EXT:frontend/Resources/Public/Icons/FileIcons/{file.extension}.gif')}" alt="">
+                                    </f:else>
+                                </f:if>
+                            </f:if>
+                        </f:if>
+                        <div>
+                            <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: file.title, then: ' title="{file.title}"')}>
+                            <span class="ce-uploads-fileName">{f:if(condition: file.properties.title, then: file.properties.title, else: file.name) -> f:format.htmlspecialchars()}</span>
+                            </a>
+                            <f:if condition="{file.properties.description}">
+                                <f:if condition="{data.uploads_description}">
+                                    <span class="ce-uploads-description">{file.properties.description}</span>
+                                </f:if>
+                            </f:if>
+                            <f:if condition="{data.filelink_size}">
+                                <span class="ce-uploads-filesize"><f:format.bytes value="{file.properties.size}" /></span>
+                            </f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
+        </f:comment>
+
+    </f:if>
+
+</f:section>
+<f:section name="tableItem">
+    <tr class="content-table__row">
+        <td class="content-table__cell">
+            <f:render section="svgFileIcon" arguments="{fileExtension: extension}" />
+        </td>
+        <td class="content-table__cell">
+            <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: title, then: ' title="{title}"')} download>
+            <span class="ce-uploads-fileName">{f:if(condition: title, then: title, else: file.name) -> f:format.htmlspecialchars()}</span>
+            </a>
+        </td>
+        <td class="content-table__cell">{size -> f:format.bytes(decimals: 0, decimalSeparator: ',', thousandsSeparator: '.')}</td>
+        <td class="content-table__cell">{extension -> f:format.case(mode: 'upper')}</td>
+        <td class="content-table__cell">{f:if(condition: '{file.properties.modification_date}', then: '{file.properties.modification_date -> f:format.date(format: \'d.m.Y\')}', else: 'n/a')}</td>
+        <td class="content-table__cell">
+            <a href="{file.publicUrl}" {f:if(condition:data.target,then: ' target="{data.target}"')}{f:if(condition: title, then: ' title="{title}"')} download>
+            <span class="ce-uploads-fileName"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:label.downloadButton" /></span>
+            </a>
+        </td>
+    </tr>
+</f:section>
+<f:section name="svgFileIcon">
+    <f:switch expression="{fileExtension -> f:format.case(mode: 'lower')}">
+        <f:case value="doc"><f:variable name="svgIconId" value="doc" /></f:case>
+        <f:case value="docx"><f:variable name="svgIconId" value="doc" /></f:case>
+        <f:case value="jpg"><f:variable name="svgIconId" value="img" /></f:case>
+        <f:case value="jpeg"><f:variable name="svgIconId" value="img" /></f:case>
+        <f:case value="png"><f:variable name="svgIconId" value="img" /></f:case>
+        <f:case value="tiff"><f:variable name="svgIconId" value="img" /></f:case>
+        <f:case value="mp4"><f:variable name="svgIconId" value="video" /></f:case>
+        <f:case value="pdf"><f:variable name="svgIconId" value="pdf" /></f:case>
+        <f:case value="ppt"><f:variable name="svgIconId" value="ppt" /></f:case>
+        <f:case value="pptx"><f:variable name="svgIconId" value="ppt" /></f:case>
+        <f:case value="xls"><f:variable name="svgIconId" value="xls" /></f:case>
+        <f:case value="xlsx"><f:variable name="svgIconId" value="xls" /></f:case>
+        <f:defaultCase><f:variable name="svgIconId" value="file" /></f:defaultCase>
+    </f:switch>
+    <f:image src="EXT:cb_template/Resources/Public/images/{svgIconId}.svg" class="img-fluid" title="File-Extension-Icon-{svgIconId}" alt="Dateiendung-Icon-{svgIconId}" />
+</f:section>
+</html>

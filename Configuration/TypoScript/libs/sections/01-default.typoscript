@@ -1,0 +1,45 @@
+page = PAGE
+
+page {
+    typeNum = 0
+
+    includeCSS.screen = EXT:cb_template/Resources/Public/css/cb_template.min.css
+
+    includeJS {
+        5 = TEXT
+        5.stdWrap.value(
+         var pageId = {field:uid};
+        )
+    }
+
+    includeJSFooter {
+        default = EXT:cb_template/Resources/Public/js/default-libs.min.js
+        cbtemplate = EXT:cb_template/Resources/Public/js/cb_template.min.js
+    }
+
+
+    headerData < lib.header-Data
+
+    10 < lib.section-header
+
+    #    20 < lib.section-header-image
+
+    30 < lib.section-content
+
+
+    40 < lib.section-footer
+}
+
+[page["uid"] == 1]
+    page.bodyTagAdd = id="home"
+    [else]
+    page.bodyTagAdd = id="sub"
+[end]
+[applicationContext == 'Development/Staging']
+    page.headerData.5 = TEXT
+    page.headerData.5.value (
+<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="4eba13c4-4a7e-40ce-be75-f1c6b5d3309f" data-blockingmode="auto" type="text/javascript">
+</script>
+    )
+[end]
+

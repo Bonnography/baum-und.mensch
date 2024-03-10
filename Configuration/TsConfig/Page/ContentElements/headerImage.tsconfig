@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.common {
+    elements {
+        headerImage {
+            iconIdentifier = content-image
+            title = LLL:EXT:cb_template/Resources/Private/Language/locallang_tca.xlf:tt_content.headerImage.wizard.title
+            description = LLL:EXT:cb_template/Resources/Private/Language/locallang_tca.xlf:tt_content.headerImage.wizard.description
+            tt_content_defValues {
+                CType = headerImage
+            }
+        }
+    }
+    show := addToList(headerImage)
+}

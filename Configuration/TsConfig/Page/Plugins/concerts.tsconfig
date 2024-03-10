@@ -1,0 +1,19 @@
+mod.wizards.newContentElement.wizardItems {
+    // add the content elementS to the tab "plugins"
+    plugins {
+        elements {
+            // ...
+            cbtemplate_concertsdb {
+                iconIdentifier = apps-clipboard-list
+                title = Concerts
+                description = Display Concert DB
+                tt_content_defValues {
+                    CType = list
+                    list_type = cbtemplate_concertsdb
+                }
+            }
+        }
+
+        show := addToList(cbtemplate_concertsdb)
+    }
+}

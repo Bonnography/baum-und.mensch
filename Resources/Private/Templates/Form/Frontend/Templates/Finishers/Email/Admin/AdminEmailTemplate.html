@@ -1,0 +1,90 @@
+{namespace formvh=TYPO3\CMS\Form\ViewHelpers}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+<table width="600" cellpadding="5" cellspacing="0" border="1">
+    <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
+        <f:if condition="{formValue.element.identifier} != 'recaptcha-1'">
+            <tr>
+                <f:if condition="{formValue.element.identifier} == 'consent-declaration'">
+                    <f:then>
+                        <td width="800" valign="top" align="left">Ich habe die Datenschutzerklärung gelesen und akzeptiert</td>
+                    </f:then>
+                    <f:else>
+                        <td width="800" valign="top" align="left"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.{formValue.element.identifier}.properties.label"/></td>
+                    </f:else>
+                </f:if>
+                <td width="600" valign="top" align="left">
+                    <f:if condition="{formValue.value}">
+                        <f:then>
+                            <f:if condition="{formValue.isMultiValue}">
+                                <f:then>
+                                    <f:if condition="{form.formState.formValues.discover-multi-checkbox}">
+                                        <f:then>
+                                            <ul>
+                                                <f:for each="{form.formState.formValues.discover-multi-checkbox}" as="multiCheckbox">
+                                                    <li><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.discover-multi-checkbox.properties.options.{multiCheckbox}"/></li>
+                                                </f:for>
+                                            </ul>
+                                        </f:then>
+                                        <f:else>
+                                            <ul>
+                                                <f:for each="{formValue.processedValue}" as="value">
+                                                    <li>{value}</li>
+                                                </f:for>
+                                            </ul>
+                                        </f:else>
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <table cellspacing="0" border="0">
+                                        <tr>
+                                            <td>
+                                                <f:if condition="{formValue.element.identifier} == 'consent-declaration'">
+                                                    <f:then>
+                                                        <f:if condition="{formValue.processedValue} == 1">
+                                                            <f:then>ja</f:then>
+                                                            <f:else>nein</f:else>
+                                                        </f:if>
+                                                    </f:then>
+                                                    <f:else>
+                                                        <f:if condition="{formValue.element.identifier} == 'vocal-group'">
+                                                            <f:then>
+                                                                <f:if condition="{form.formState.formValues.vocal-group}">{form.formState.formValues.vocal-group}</f:if>
+                                                            </f:then>
+                                                            <f:else>
+                                                                <f:format.nl2br>{formValue.processedValue}</f:format.nl2br>
+                                                            </f:else>
+                                                        </f:if>
+                                                    </f:else>
+                                                </f:if>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </f:else>
+                            </f:if>
+                        </f:then>
+                        <f:else>
+                            <f:if condition="{formValue.element.identifier} == 'experience-radio'">
+                                <f:then>
+                                    {formValue.processedValue}
+                                </f:then>
+                                <f:else>
+                                    -
+                                </f:else>
+                            </f:if>
+                        </f:else>
+
+                    </f:if>
+                </td>
+            </tr>
+        </f:if>
+    </formvh:renderAllFormValues>
+</table>
+</body>
+</html>

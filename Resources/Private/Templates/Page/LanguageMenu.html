@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="LanguageMenu"/>
+<f:section name="Main">
+    <f:if condition="{languageMenu.1.available}">
+        <nav id="menu-language" class="menu-language">
+            <ul class="menu-language__list">
+                <f:for each="{languageMenu}" as="languages">
+                    <f:if condition="{languages.active}">
+                        <f:else>
+                    <li class="menu-language__list-item {languages.title -> f:format.case(mode: 'lower')}{f:if(condition: languages.active, then: ' active')}">
+                        <f:if condition="{languages.available}">
+
+
+                                        <f:link.typolink parameter="{languages.link}"
+                                                         additionalAttributes="{hreflang:'{languages.hreflang}'}"
+                                                         title="{languages.title}">
+                                            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:languages.{languages.twoLetterIsoCode}"/>
+                                        </f:link.typolink>
+
+                                </f:if>
+
+                    </li>
+                    </f:else>
+                    </f:if>
+                </f:for>
+            </ul>
+        </nav>
+    </f:if>
+</f:section>
+</html>

@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:spaceless>
+    <f:switch expression="{data.CType}">
+        <f:case value="news">
+            <div id="c{data.uid}" class="content news{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="textmedia">
+            <div id="c{data.uid}" class="content textmedia{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="text">
+            <div id="c{data.uid}" class="content text{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="pagesOverview">
+            <div id="c{data.uid}" class="content pagesOverview{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="inlineElements">
+            <div id="c{data.uid}" class="content inlineElements{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="headline">
+            <div id="c{data.uid}" class="content headline{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="image">
+            <div id="c{data.uid}" class="content image{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="felogin_login">
+            <div id="c{data.uid}" class="content felogin{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                <f:if condition="{data.header}">
+                    <f:render section="Header" optional="true">
+                        <f:render partial="Header/All" arguments="{_all}" />
+                    </f:render>
+                </f:if>
+                <f:render section="Main" optional="true"/>
+            </div>
+        </f:case>
+        <f:case value="list">
+            <f:switch expression="{data.list_type}">
+                <f:case value="cbtemplate_concertsdb">
+                    <div id="c{data.uid}"
+                         class="content concerts{f:if(condition: '{data.remove_bottom_space}', then: ' pb-0')}{f:render(partial:'Background/Background', arguments:'{data: data}')}">
+                        <f:render section="Main" optional="true"/>
+                    </div>
+                </f:case>
+            </f:switch>
+        </f:case>
+        <f:defaultCase>
+            <f:render section="Main" optional="true"/>
+        </f:defaultCase>
+    </f:switch>
+</f:spaceless>
+</html>

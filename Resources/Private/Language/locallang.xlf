@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-08-03UTC08:39:270">
+        <header>
+            <authorName>Benjamin Bomberg</authorName>
+            <authorEmail>benjamin.bomberg@codebomb-websolutions.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="news.showAll">
+                <source>Show all news</source>
+            </trans-unit>
+            <trans-unit id="news.moreInformation">
+                <source>Read more</source>
+            </trans-unit>
+            <trans-unit id="concerts.date">
+                <source>Date: </source>
+            </trans-unit>
+            <trans-unit id="concerts.location">
+                <source>Location: </source>
+            </trans-unit>
+            <trans-unit id="concerts.price">
+                <source>Price: </source>
+            </trans-unit>
+            <trans-unit id="concerts.moreInformation">
+                <source>More informations</source>
+            </trans-unit>
+            <trans-unit id="concerts.lessInformation">
+                <source>Less informations</source>
+            </trans-unit>
+            <trans-unit id="concerts.tickets">
+                <source>Tickets</source>
+            </trans-unit>
+            <trans-unit id="concerts.filterYear">
+                <source>Choose a year</source>
+            </trans-unit>
+            <trans-unit id="concerts.filterCategory">
+                <source>Choose a category</source>
+            </trans-unit>
+            <trans-unit id="concerts.time">
+                <source>Time of day: </source>
+            </trans-unit>
+            <trans-unit id="concerts.noConcerts">
+                <source>Sorry but there are no concerts available</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterText">
+                <source>All information about the ensemble and upcoming events directly by email.</source>
+            </trans-unit>
+            <trans-unit id="footer.socialMediaText">
+                <source>All information about the ensemble and upcoming events - Follow us!</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterRegistrationFailed">
+                <source>Your registration could not be saved. Please try again.</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterRegistrationSuccess">
+                <source>Your registration was successful. Thank you very much.</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterButton">
+                <source>Subscribe to newsletter</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterUnsubscribeHint">
+                <source>You can unsubscribe from the newsletter at any time via the link in our newsletter.</source>
+            </trans-unit>
+            <trans-unit id="footer.newsLetter.email">
+                <source>E-mail address</source>
+            </trans-unit>
+            <trans-unit id="footer.newsletterPrivacy">
+                <source>I would like to receive your newsletter and accept the <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/en/privacy">privacy policy</a>]]>.</source>
+            </trans-unit>
+            <trans-unit id="languages.en">
+                <source>English</source>
+            </trans-unit>
+            <trans-unit id="languages.de">
+                <source>Deutsch</source>
+            </trans-unit>
+            <trans-unit id="label.fileName">
+                <source>File name</source>
+            </trans-unit>
+            <trans-unit id="label.fileSize">
+                <source>File size</source>
+            </trans-unit>
+            <trans-unit id="label.fileType">
+                <source>File type</source>
+            </trans-unit>
+            <trans-unit id="label.fileChanged">
+                <source>File changed</source>
+            </trans-unit>
+            <trans-unit id="label.downloadButton">
+                <source>Download</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

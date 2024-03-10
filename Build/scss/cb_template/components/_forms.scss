@@ -1,0 +1,488 @@
+// custom mobile from bbom
+.sib-form .form__label-row .input {
+  width: 100%;
+  margin-bottom: 10px;
+  align-items: center;
+  background: #fff;
+  display: inline-flex;
+
+  &:hover, &:focus, &:focus-visible {
+    outline: 1px solid $amici-orange;
+  }
+}
+
+.form__label-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media screen and (min-width: 1200px) {
+  .sib-form .form__label-row .input {
+    margin-right: 10px;
+    margin-bottom: 0;
+    width: 50%;
+  }
+  .form__label-row {
+    justify-content: unset;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .sib-form .form__label-row .input {
+    width: unset;
+  }
+}
+
+.input_display {
+  line-height: 1.5rem
+}
+
+.entry__choice {
+  width: 100%;
+  margin-bottom: 3px;
+  word-wrap: break-word;
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: inherit;
+  }
+  input {
+    margin: 7px 7px 0 0;
+  }
+}
+
+.entry__label {
+  margin-bottom: 10px;
+  width: 100%;
+  font-weight: 500;
+  word-break: break-word;
+  word-wrap: break-word
+}
+
+.entry__label_optin {
+  display: inline
+}
+
+.entry__label > * {
+  float: left
+}
+
+.entry__specification {
+  margin: 10px 0
+}
+
+.entry__controls {
+  margin: 0
+}
+
+.entry__error {
+  display: none;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  background: transparent
+}
+
+.sib-entry_mcq .entry__controls {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none
+}
+
+.sib-form-block {
+  word-wrap: break-word;
+  outline: none
+}
+
+.sib-form-block p, .sib-form-block ol, .sib-form-block ul {
+  text-align: inherit;
+  margin: 0;
+  line-height: 1.5em
+}
+
+.sib-form-block ol, .sib-form-block ul {
+  list-style-position: inside
+}
+
+.form__entry {
+  position: static;
+  margin-left: 0;
+  padding-left: 0
+}
+
+.sib-panel {
+  position: relative;
+  width: 100%;
+  margin: 24px 0;
+  padding: 10px 25px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  color: #3C4858;
+  text-align: center;
+  box-shadow: none
+}
+
+.sib-panel--active {
+  display: block
+}
+
+.sib-panel--inactive {
+  display: none
+}
+
+.sib-panel__text {
+  margin: 0;
+  font-weight: 600;
+  text-align: left
+}
+
+.sib-panel__link {
+  padding: 0 5px;
+  color: #3C4858;
+  text-decoration: underline;
+  cursor: pointer
+}
+
+.sib-panel__close-icon {
+  position: absolute;
+  top: 12px;
+  right: 25px;
+  cursor: pointer
+}
+
+.sib-form-message-panel {
+  margin: 0 0 1.25rem 0;
+  width: 100%;
+  padding: 0.4375rem;
+  border: 1px solid;
+  display: none
+}
+
+.sib-form-message-panel--active {
+  display: inline-block
+}
+
+.sib-form-message-panel__text {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem
+}
+
+.sib-form-message-panel__text .sib-icon {
+  contain: strict;
+  display: inline-block;
+  fill: currentColor
+}
+
+.sib-form-message-panel__text .sib-notification__icon {
+  height: 1.5em;
+  width: 1.5em;
+  flex-shrink: 0;
+  margin-right: calc(1rem - 1px)
+}
+
+.entry__choice label p {
+  display: inline
+}
+
+.sib-form .form__entry {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative
+}
+
+.sib-form .form__entry:not(:first-child) {
+  margin-top: 1.5rem
+}
+
+.sib-form .entry__label + .form__entry {
+  margin-top: 0
+}
+
+.sib-form .entry__label {
+  display: table;
+  font-weight: 700;
+  padding: 0;
+  white-space: normal
+}
+
+.sib-form .form__row {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -.25rem -.75rem
+}
+
+.sib-form .form__row:not(:first-child) {
+  margin-top: 1.25rem
+}
+
+.sib-form .entry__label + .form__row {
+  margin-top: -.25rem
+}
+
+.sib-form .form__row > .form__entry {
+  margin: .25rem .75rem
+}
+
+.sib-form .entry__optional-indicator {
+  color: #687484;
+  font-size: .87055056rem;
+  line-height: 1rem;
+  font-weight: 400
+}
+
+//needed
+#sib-container {
+  display: inline-block;
+  width: 100%
+}
+
+#sib-form {
+  text-align: left
+}
+
+
+.sib-form .input {
+  border: 0;
+  padding: 8px 10px;
+}
+
+.input--hidden {
+  display: none !important
+}
+
+input::-webkit-input-placeholder {
+  color: #BFCAD8
+}
+
+input::-moz-placeholder {
+  color: #BFCAD8
+}
+
+input:-ms-input-placeholder {
+  color: #BFCAD8
+}
+
+input:-moz-placeholder {
+  color: #BFCAD8
+}
+
+.sib-hide-loader-icon {
+  display: none
+}
+
+.sib-form .clickable__icon {
+  height: 1.5rem;
+  vertical-align: bottom;
+  width: 1.5rem;
+  fill: #fff;
+}
+
+.sib-form .clickable__icon:not(.sib-icon_standalone) {
+  margin-right: calc(.7002rem - 1px)
+}
+
+.sib-form .progress-indicator {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.9);
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%
+}
+
+.sib-form .progress-indicator .progress-indicator__icon {
+  fill: #0092ff;
+  height: 2rem;
+  width: 2rem
+}
+
+.sib-form .progress-indicator_small .progress-indicator__icon {
+  height: 1rem;
+  width: 1rem
+}
+
+.sib-form .progress-indicator__icon {
+  animation: indicator-spin 1.3s cubic-bezier(0.46, 0.35, 0.39, 0.85) infinite
+}
+
+@-webkit-keyframes indicator-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes indicator-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+.grecaptcha-badge {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+.amici-contaktform {
+  label.form-label {
+    display: none;
+  }
+}
+.amici-contaktform, .amici-registrationform, .loginform {
+  padding: 40px 30px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, .1), 0 4px 4px rgba(0, 0, 0, .05);
+  margin-bottom: 30px;
+
+  .form-check {
+    padding-left: 0;
+  }
+  .form-label {
+    margin-bottom: .75rem;
+    font-size: 1.25rem;
+  }
+
+  .message-if-previous-experience.hide {
+    display: none;
+  }
+  .radio-buttons {
+    .form-check {
+      padding-left: 1.5em;
+      display: inline-block;
+
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+  input {
+    border-color: transparent;
+    background: $main-bright-color;
+  }
+
+  .input {
+    .form-control {
+      border-radius: 0;
+      width: 100%;
+      color: $input-color;
+      appearance: auto;
+
+      &:focus {
+        border-color: $main-color;
+        box-shadow: unset;
+        outline: 0;
+      }
+    }
+    .form-check {
+      .declaration {
+        .form-check-input {
+          margin-top: 0;
+          margin-left: 0;
+          float: unset;
+          background: #fff;
+          width: 0.825em;
+          height: 0.825em;
+          border: var(--bs-border-width) solid rgba(0, 0, 0, .5);
+          border-radius: .15em;
+        }
+      }
+
+    }
+
+    textarea.form-control {
+      background: $main-bright-color;
+    }
+
+    &.checkbox {
+      label {
+        padding-left: 0;
+      }
+
+    }
+
+    .checkbox-label {
+      display: block;
+      margin-left: 25px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+
+    .btn-group {
+      display: block;
+    }
+  }
+  .form-check-label {
+    display: flex;
+    align-items: center;
+
+    p, span {
+      margin-bottom: 0;
+      margin-left: 10px;
+    }
+  }
+  .declaration {
+    span {
+      margin: 0;
+    }
+  }
+}
+.was-validated {
+  .input {
+    .form-check {
+      .declaration {
+        .form-check-input:invalid {
+          border-color: var(--bs-form-invalid-border-color);
+        }
+        .form-check-input:invalid + p {
+          color: var(--bs-form-invalid-border-color);
+        }
+      }
+    }
+  }
+
+}
+@include media-breakpoint-up(md) {
+  .amici-contaktform, .amici-registrationform {
+    .input {
+      &.checkbox {
+        width: 75%;
+      }
+    }
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+  .amici-contaktform, .amici-registrationform {
+    .input {
+      textarea.form-control {
+        min-height: 150px;
+      }
+    }
+  }
+}

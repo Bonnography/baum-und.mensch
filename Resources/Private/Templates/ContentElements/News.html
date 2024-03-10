@@ -1,0 +1,115 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace cbw=CodebombWebsolutions\CbTemplate\ViewHelpers}
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}" />
+        </f:render>
+    </f:if>
+    <f:if condition="{data.relatedNews} == '1'">
+        <f:then>
+            <f:if condition="{news}">
+                <f:then>
+                    <f:variable name="relatedNews" value="{cbw:RelatedNews(newsArray: news)}"/>
+                    <div class="row">
+                        <f:for each="{relatedNews}" as="relatedSingleNews">
+                            <div class="col-12 col-md-6 related-news">
+                                <f:render section="news" arguments="{news: relatedSingleNews, data: data, layout: 'related-news'}"/>
+                            </div>
+                        </f:for>
+                    </div>
+
+                    <div class="news-showmore text-center">
+                        <f:link.page pageUid="{newsListPid}" class="btn btn-secondary">
+                            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:news.showAll"/>
+                        </f:link.page>
+                    </div>
+                </f:then>
+            </f:if>
+
+        </f:then>
+        <f:else>
+            <f:if condition="{news}">
+                <ul class="news-list">
+                    <f:for each="{news}" as="news">
+                        <li class="news-list-item">
+                            <f:render section="news" arguments="{news: news, data: data, layout: 'news-list'}"/>
+                        </li>
+                    </f:for>
+                </ul>
+
+            </f:if>
+        </f:else>
+    </f:if>
+
+
+</f:section>
+<f:section name="news">
+    <div class="news-wrapper{f:if(condition: '{layout} == \'related-news\'', then: ' news-wrapper-related')}">
+        <f:if condition="{news.content}">
+            <f:for each="{news.content}" as="contentForImage">
+                <f:if condition="{contentForImage.data.CType} == 'textmedia'">
+                    <f:then>
+                        <f:variable name="imageArr" value="{contentForImage.files}"/>
+                    </f:then>
+                </f:if>
+            </f:for>
+            <div class="row">
+                <div class="{f:if(condition: '{layout} == \'related-news\'', then: 'col-md-5', else:'col-md-4')}">
+                    <f:for each="{imageArr}" as="image">
+                        <a href="{news.link}" title="{news.title}">
+                        <div class="news-image">
+                            <f:media
+                                    class="img-fluid "
+                                    file="{image}"
+                                    width="{dimensions.width}"
+                                    height="{dimensions.height}"
+                                    alt="{file.alternative}"
+                                    title="{file.title}"
+                                    loading="{settings.media.lazyLoading}"
+                                    additionalAttributes="{srcset: '
+                                    {f:uri.image(image: image, maxWidth: 375)} 375w,
+                                    {f:uri.image(image: image, maxWidth: 560)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 375)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 375)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 300)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 300)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                            />
+                        </div>
+                        </a>
+                    </f:for>
+                </div>
+                <div class="{f:if(condition: '{layout} == \'related-news\'', then: 'col-md-7', else:'col-md-8')}">
+                    <div class="news-informations">
+                        <p class="news-date">
+                            <f:format.date format="d.m.Y">{news.data.starttime}</f:format.date>
+                        </p>
+                        <f:if condition="{news.data.subtitle}">
+                            <f:then>
+                                <header>
+                                    <h3>{news.title}</h3>
+                                    <p class="subtitle">{news.data.subtitle}</p>
+                                </header>
+                            </f:then>
+                            <f:else>
+                                <h3>
+                                    {news.title}
+                                </h3>
+                            </f:else>
+                        </f:if>
+                        <f:if condition="{news.data.newsTeaser}">
+                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{news.data.newsTeaser}</f:format.html>
+                        </f:if>
+                        <a href="{news.link}" title="{news.title}">
+                            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:news.moreInformation"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </f:if>
+    </div>
+
+</f:section>
+</html>

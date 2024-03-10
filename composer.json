@@ -1,0 +1,23 @@
+{
+    "name": "codebomb-websolutions/cb-template",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "homepage": "https://www.bonnography.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "require": {
+        "typo3/cms-core": "^12.4",
+        "typo3/cms-rte-ckeditor": "^12.4",
+        "typo3/cms-fluid-styled-content": "^12.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "CodebombWebsolutions\\CbTemplate\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "cb_template"
+        }
+    }
+}

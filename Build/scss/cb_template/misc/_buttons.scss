@@ -1,0 +1,35 @@
+.btn {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.btn.btn-primary {
+  background: $amici-blue;
+  color: #fff;
+  border-radius: 0;
+  border: 1px solid $amici-blue;
+  padding: 8px 10px;
+
+  &:hover, &:active {
+    background: $amici-orange;
+    border: 1px solid $amici-orange;
+  }
+}
+
+.btn-secondary {
+  border: 1px solid $amici-blue;
+  color: $amici-blue;
+  transition: all .6s;
+  border-radius: 0;
+  padding: 8px 10px;
+  background-color: #fff;
+
+  &:hover, &:active {
+    border: 1px solid $amici-orange;
+    color: $amici-orange;
+    transition: all .4s;
+    background-color: #fff;
+  }
+}

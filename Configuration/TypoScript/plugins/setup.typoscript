@@ -1,0 +1,4 @@
+@import 'EXT:cb_template/Configuration/TypoScript/libs/plugins/concerts/setup.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/plugins/Form/setup.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/plugins/Felogin/setup.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/plugins/Seo/setup.typoscript'

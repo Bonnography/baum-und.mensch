@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="Main">
+
+    <f:switch expression="{data.imageorient}">
+        <f:defaultCase>
+            <div class="row {f:if(condition:'{data.imageorient} == 25', then: 'justify-content-end', else: '')}">
+                <div class="{f:render(partial:'Utility/SwitchTextMediaImagePosition', arguments:'{data: data, type: "media"}')}">
+                <f:if condition="{data.imageorient} == 0">
+                    <f:then>
+                        <f:render partial="Media/Gallery" arguments="{_all}" />
+                    </f:then>
+                    <f:else>
+                        <f:render partial="Media/Textmedia-Image" arguments="{_all}"/>
+                    </f:else>
+                </f:if>
+            </div>
+            <f:if condition="{data.imageorient} == 8">
+                <div class="col-12 order-1">
+
+                    <f:if condition="{data.header}">
+                        <f:render section="Header" optional="true">
+                            <f:render partial="Header/All" arguments="{_all}" />
+                        </f:render>
+                    </f:if>
+                    <f:if condition="{data.bodytext}">
+                        <div class="ce-bodytext {f:if(condition:'{data.text_vertical_center}', then: 'vertical-center', else: '')}">
+                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:spaceless>{data.bodytext}</f:spaceless></f:format.html>
+                        </div>
+                    </f:if>
+                </div>
+            </f:if>
+            <f:if condition="{data.bodytext}">
+                <f:switch expression="{data.imageorient}">
+                    <f:case value="0">
+                        <div class="col-12">
+                            <f:render section="bodytext" arguments="{_all}"/>
+                        </div>
+                    </f:case>
+                    <f:case value="25">
+                        <div class="col-12 col-md-6 order-md-1 {f:if(condition:'{data.text_position} == 1', then: 'd-flex align-items-center', else: '')}">
+                            <f:render section="bodytext" arguments="{_all}"/>
+                        </div>
+                    </f:case>
+                    <f:case value="26">
+                        <div class="col-12 col-md-6 order-md-2">
+                            <f:render section="bodytext" arguments="{_all}"/>
+                        </div>
+                    </f:case>
+                </f:switch>
+            </f:if>
+            </div>
+        </f:defaultCase>
+
+    </f:switch>
+
+
+</f:section>
+<f:section name="bodytext">
+    <f:if condition="{data.bodytext}">
+        <f:then>
+            <div class="ce-bodytext {f:if(condition:'{data.text_vertical_center}', then: 'vertical-center', else: '')}">
+                <f:if condition="{data.header}">
+                    <f:render section="Header" optional="true">
+                        <f:render partial="Header/All" arguments="{_all}" />
+                    </f:render>
+                </f:if>
+                <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:spaceless>{data.bodytext}</f:spaceless></f:format.html>
+            </div>
+        </f:then>
+        <f:else>
+            <f:if condition="{gallery.position.noWrap}">
+                <f:if condition="{data.header}">
+                    <div class="ce-bodytext">
+                        <f:render partial="Header/All" arguments="{_all}"/>
+                    </div>
+                </f:if>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
+

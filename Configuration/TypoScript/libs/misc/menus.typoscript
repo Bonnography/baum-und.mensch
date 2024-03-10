@@ -1,0 +1,165 @@
+
+#
+# main menu example, some special renderings were commented out, 3 menu levels
+#
+# ####
+
+lib.menu-main-fluid = FLUIDTEMPLATE
+lib.menu-main-fluid {
+    templateName = MainMenu
+    templateRootPaths {
+        0 = EXT:cb_template/Resources/Private/Templates/Page
+    }
+
+    layoutRootPaths {
+        0 = EXT:cb_template/Resources/Private/Layouts/Page/Backendlayouts/
+    }
+
+    partialRootPaths {
+        0 = EXT:cb_template/Resources/Private/Partials/Page
+    }
+
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        10 {
+            entryLevel = 0
+            levels = 3
+            includeSpacer = 1
+            as = mainnavigation
+        }
+        20 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        20 {
+            languages = 0, 1
+            as = languageMenu
+        }
+        30 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+        30 {
+            special = directory
+            special.value = {$page.metaMenu}
+            includeNotInMenu = 1
+            as = metaMenu
+        }
+    }
+}
+
+#
+# example for footer or support menu
+#
+# ####
+
+lib.menu-footer = HMENU
+lib.menu-footer {
+    includeNotInMenu = 1
+    special = directory
+    special.value = {$page.menuFooter}
+
+    1 = TMENU
+    1 {
+        stdWrap {
+            required = true
+            outerWrap = <nav id="menu-footer" class="menu-footer">|</nav>
+            wrap = <ul class="menu-footer__list">|</ul>
+        }
+        NO {
+            stdWrap.htmlSpecialChars = 1
+            wrapItemAndSub = <li class="menu-footer__list-item lvl1">|</li>
+            ATagParams = class="menu-footer__list-item-link lvl1"
+            ATagTitle.field = title
+        }
+        ACT < .NO
+        ACT = 1
+        ACT.wrapItemAndSub = <li class="menu-footer__list-item lvl1 active">|</li>
+    }
+}
+#
+# example for footer or support menu
+#
+# ####
+
+lib.menu-meta = HMENU
+lib.menu-meta {
+    includeNotInMenu = 1
+    special = directory
+    special.value = {$page.metaMenu}
+
+    1 = TMENU
+    1 {
+        stdWrap {
+            required = true
+            outerWrap = <nav id="meta-menu" class="meta-menu">|</nav>
+            wrap = <ul class="meta-menu__list">|</ul>
+        }
+        NO {
+            stdWrap.htmlSpecialChars = 1
+            wrapItemAndSub = <li class="meta-menu__list-item lvl1">|</li>
+            ATagParams = class="meta-menu__list-item-link lvl1"
+            ATagTitle.field = title
+        }
+        ACT < .NO
+        ACT = 1
+        ACT.wrapItemAndSub = <li class="meta-menu__list-item lvl1 active">|</li>
+    }
+}
+
+lib.menu-language = FLUIDTEMPLATE
+lib.menu-language {
+    templateName = LanguageMenu
+    templateRootPaths {
+        0 = EXT:cb_template/Resources/Private/Templates/Page
+    }
+    layoutRootPaths {
+        0 = EXT:cb_template/Resources/Private/Layouts/Page
+    }
+    partialRootPaths {
+        0 = EXT:cb_template/Resources/Private/Partials/Page
+    }
+    dataProcessing {
+        20 = TYPO3\CMS\Frontend\DataProcessing\LanguageMenuProcessor
+        20 {
+            languages = 0, 1
+            as = languageMenu
+        }
+    }
+}
+
+#
+# example for social media menu
+#
+# ####
+
+lib.menu-social-media = COA
+lib.menu-social-media {
+    20 = TEXT
+    20 {
+        value = Facebook
+        stdWrap {
+            #            outerWrap = <div class="facebook">|</div>
+            if.isTrue = {$company.facebook}
+            typolink {
+                parameter = {$company.facebook}
+                extTarget = _blank
+                ATagParams = class="facebook"
+                wrap = <span>|</span>
+                ATagBeforeWrap = 1
+                title = Facebook Link
+            }
+        }
+    }
+    30 = TEXT
+    30 {
+        value = Instagram
+        stdWrap {
+            #            outerWrap = <div class="instagram">|</div>
+
+            if.isTrue = {$company.instagram}
+            typolink {
+                parameter = {$company.instagram}
+                extTarget = _blank
+                ATagParams = class="instagram" rel="noreferrer"
+                wrap = <span>|</span>
+                ATagBeforeWrap = 1
+                title = Instagram Link
+            }
+        }
+    }
+}

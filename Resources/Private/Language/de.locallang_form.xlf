@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2023-08-03UTC08:39:270">
+        <header>
+            <authorName>Benjamin Bomberg</authorName>
+            <authorEmail>benjamin.bomberg@codebomb-websolutions.de</authorEmail>
+        </header>
+        <body>
+           <trans-unit id="element.firstname.properties.label">
+               <target>Vorname</target>
+           </trans-unit>
+           <trans-unit id="element.firstname.properties.placeholder">
+              <target>Vorname</target>
+           </trans-unit>
+           <trans-unit id="element.lastname.properties.label">
+               <target>Nachname</target>
+           </trans-unit>
+           <trans-unit id="element.lastname.properties.placeholder">
+               <target>Nachname</target>
+           </trans-unit>
+           <trans-unit id="element.lastname-contact-form.properties.placeholder">
+               <target>Nachname*</target>
+           </trans-unit>
+           <trans-unit id="element.lastname-contact-form.properties.label">
+               <target>Nachname</target>
+           </trans-unit>
+           <trans-unit id="element.email-contact-form.properties.label">
+               <target>E-Mail-Adresse</target>
+           </trans-unit>
+           <trans-unit id="element.message-contact-form.properties.label">
+               <target>Nachricht</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Sopran">
+               <target>Sopran</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Sopran">
+               <target>Sopran</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Alt">
+               <target>Alt</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Bariton">
+               <target>Bariton</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Violine-1">
+               <target>Violine 1</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Violine-2">
+               <target>Violine 2</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Bratsche">
+               <target>Bratsche</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.options.Kontrabass">
+               <target>Kontrabass</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.prependOptionLabel">
+               <target>Bitte wählen</target>
+           </trans-unit>
+           <trans-unit id="element.vocal-group.properties.label">
+               <target>Register | Stimmgruppe</target>
+           </trans-unit>
+           <trans-unit id="element.birthdate.properties.label">
+               <target>Geburtstag</target>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.label">
+               <target>Du hast bereits Chor-/Ensemble- oder Orchester-Erfahrung?</target>
+           </trans-unit>
+           <trans-unit id="experience-radio.email.label">
+               <target>Chor-/Ensemble- oder Orchester-Erfahrung: </target>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.options.0">
+               <target>Ja</target>
+           </trans-unit>
+           <trans-unit id="element.experience-radio.properties.options.1">
+               <target>Nein</target>
+           </trans-unit>
+           <trans-unit id="element.message-contact-form.properties.placeholder">
+               <target>Nachricht*</target>
+           </trans-unit>
+           <trans-unit id="form.confirmation.yourExperience">
+               <target>Deine Vorerfahrung: </target>
+           </trans-unit>
+           <trans-unit id="element.message.properties.label">
+               <target>Bitte erläutere uns kurz deine Vorerfahrung.</target>
+           </trans-unit>
+           <trans-unit id="element.email.properties.label">
+               <target>E-Mail</target>
+           </trans-unit>
+           <trans-unit id="element.email.properties.placeholder">
+               <target>E-Mail-Adresse</target>
+           </trans-unit>
+           <trans-unit id="element.email-contact-form.properties.placeholder">
+               <target>E-Mail-Adresse*</target>
+           </trans-unit>
+           <trans-unit id="element.phone.properties.label">
+               <target>Telefon</target>
+           </trans-unit>
+           <trans-unit id="element.phone.properties.placeholder">
+               <target>Telefonnummer</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.label">
+               <target>Wie bist Du auf »amici musicae« gestoßen?</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.1">
+               <target>durch Freunde, Familie, Bekannte oder/und Verwandte</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.2">
+               <target>ich habe ein Konzert der »amici musicae« besucht</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.3">
+               <target>über Online-Suchmaschine</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.4">
+               <target>durch Facebook, Instagram &amp; Co.</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.5">
+               <target>durch das Radio, Spotify oder eine unserer CDs</target>
+           </trans-unit>
+           <trans-unit id="element.discover-multi-checkbox.properties.options.6">
+               <target>Sonstiges</target>
+           </trans-unit>
+           <trans-unit id="element.Form.renderingOptions.submitButtonLabel">
+               <target>Absenden</target>
+           </trans-unit>
+           <trans-unit id="element.consent-declaration.properties.value">
+               <target>Ich habe die <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/datenschutz">Datenschutzerklärung</a> gelesen und stimme ihrem Inhalt zu.]]></target>
+           </trans-unit>
+           <trans-unit id="element.consent-declaration.properties.label">
+               <target>Ich habe die <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/datenschutz">Datenschutzerklärung</a> gelesen und stimme ihrem Inhalt zu.]]></target>
+           </trans-unit>
+           <trans-unit id="form.confirmation.yourMessage">
+              <target>Ihre Nachricht</target>
+          </trans-unit>
+           <trans-unit id="form.confirmation.contactForm.header">
+              <target>Vielen Dank für Ihre Nachricht</target>
+          </trans-unit>
+           <trans-unit id="form.confirmation.contactForm.data">
+              <target>Folgende Daten wurden erfolgreich übermittelt:</target>
+          </trans-unit>
+           <trans-unit id="form.confirmation.registrationForm.header">
+              <target>Vielen Dank für Ihre Registrierung</target>
+          </trans-unit>
+           <trans-unit id="form.confirmation.registrationForm.data">
+              <target>Folgende Daten wurden erfolgreich übermittelt:</target>
+          </trans-unit>
+        </body>
+    </file>
+</xliff>

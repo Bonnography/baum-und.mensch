@@ -1,0 +1,218 @@
+tt_content {
+    news < lib.contentElement
+    news {
+        templateName = News
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = directory
+                special.value.field = pages
+                alternativeSortingField = starttime DESC
+                as = news
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = media
+                    }
+
+                    20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                    20 {
+                        table = tt_content
+                        pidInList.field = uid
+                        orderBy = sorting
+                        as = content
+                        dataProcessing {
+                            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                            10 {
+                                references.fieldName = assets
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        variables {
+            newsListPid = TEXT
+            newsListPid.value = {$page.newsListViewPid}
+        }
+    }
+    headerImage < lib.contentElement
+    headerImage {
+        templateName = HeaderImage
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+            10 {
+                references {
+                    table = tt_content
+                    fieldName = image
+                }
+                as = images
+            }
+        }
+    }
+    pagesOverview < lib.contentElement
+    pagesOverview {
+        templateName = PagesOverview
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+        dataProcessing {
+            10 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            10 {
+                special = list
+                special.value.field = pages
+                dataProcessing {
+                    10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    10 {
+                        references.fieldName = media
+                    }
+
+                    15 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                    15 {
+                        references.fieldName = og_image
+                    }
+
+                    20 = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+                    20 {
+                        table = tt_content
+                        pidInList.field = uid
+                        orderBy = sorting
+                        as = content
+                        dataProcessing {
+                            10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+                            10 {
+                                references.fieldName = assets
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    inlineElements < lib.contentElement
+    inlineElements {
+        templateName = InlineElements
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+        dataProcessing {
+            10 = CodebombWebsolutions\CbTemplate\DataProcessing\ChildContentElementProcessor
+            10 {
+                references {
+                    fieldName = inline_item_container
+                    table = tt_content
+                }
+                as = inlineElements
+            }
+        }
+    }
+    headline < lib.contentElement
+    headline {
+        templateName = Headline
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    textmedia {
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    text {
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    list {
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    uploads {
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    image {
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+    }
+    felogin_login {
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/ContentElements/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+    }
+}

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2023-08-03UTC08:39:270">
+        <header>
+            <authorName>Benjamin Bomberg</authorName>
+            <authorEmail>benjamin.bomberg@codebomb-websolutions.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="news.showAll">
+                <target>Alle News</target>
+            </trans-unit>
+            <trans-unit id="news.moreInformation">
+                <target>Mehr erfahren</target>
+            </trans-unit>
+            <trans-unit id="concerts.date">
+                <target>Datum: </target>
+            </trans-unit>
+            <trans-unit id="concerts.location">
+                <target>Ort: </target>
+            </trans-unit>
+            <trans-unit id="concerts.price">
+                <target>Preis: </target>
+            </trans-unit>
+            <trans-unit id="concerts.moreInformation">
+                <target>Mehr erfahren</target>
+            </trans-unit>
+            <trans-unit id="concerts.lessInformation">
+                <target>Details ausblenden</target>
+            </trans-unit>
+            <trans-unit id="concerts.tickets">
+                <target>Tickets</target>
+            </trans-unit>
+            <trans-unit id="concerts.filterYear">
+                <target>Jahr auswählen</target>
+            </trans-unit>
+            <trans-unit id="concerts.filterCategory">
+                <target>Kategorie auswählen</target>
+            </trans-unit>
+            <trans-unit id="concerts.time">
+                <target>Beginn: </target>
+            </trans-unit>
+            <trans-unit id="concerts.noConcerts">
+                <target>Aktuell sind keine Konzerte verfügbar.</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterText">
+                <target>Alle Informationen zum Ensemble und zu kommenden Veranstaltungen direkt per E-Mail.</target>
+            </trans-unit>
+            <trans-unit id="footer.socialMediaText">
+                <target>Alle Informationen zum Ensemble und zu kommenden Veranstaltungen - Folge uns!</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterRegistrationFailed">
+                <target>Ihre Anmeldung konnte nicht gespeichert werden. Bitte versuchen Sie es erneut.</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterRegistrationSuccess">
+                <target>Ihre Anmeldung war erfolgreich. Vielen Dank.</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterButton">
+                <target>Newsletter abbonnieren</target>
+            </trans-unit>
+            <trans-unit id="footer.newsLetter.email">
+                <target>E-Mail-Adresse</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterUnsubscribeHint">
+                <target>Sie können den Newsletter jederzeit über den Link in unserem Newsletter abbestellen.</target>
+            </trans-unit>
+            <trans-unit id="footer.newsletterPrivacy">
+                <target>Ich möchte Ihren Newsletter erhalten und akzeptiere die <![CDATA[<a target="_blank" rel="noopener" href="https://amici.codebomb-websolutions.de/datenschutz">Datenschutzerklärung</a>]]>.</target>
+            </trans-unit>
+            <trans-unit id="languages.en">
+                <target>English</target>
+            </trans-unit>
+            <trans-unit id="languages.de">
+                <target>Deutsch</target>
+            </trans-unit>
+            <trans-unit id="label.fileName">
+                <target>Dateiname</target>
+            </trans-unit>
+            <trans-unit id="label.fileSize">
+                <target>Dateigröße</target>
+            </trans-unit>
+            <trans-unit id="label.fileType">
+                <target>Dateityp</target>
+            </trans-unit>
+            <trans-unit id="label.fileChanged">
+                <target>Änderungsdatum</target>
+            </trans-unit>
+            <trans-unit id="label.downloadButton">
+                <target>Download</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

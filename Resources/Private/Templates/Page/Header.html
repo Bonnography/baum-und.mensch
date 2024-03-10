@@ -1,0 +1,37 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Header"/>
+<f:section name="Main">
+    <!-- Header Section Start -->
+    <header id="header" class="header">
+        <div class="container-fluid menu-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3 col-md-2 d-flex align-items-center d-xl-none nav-icon-wrapper">
+                        <div id="menu-main-trigger">
+                            <div id="nav-icon">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-logo d-flex justify-content-center justify-content-xl-start align-items-center col-6 col-md-8 col-xl-2">
+                        <f:format.raw>{headerlogo}</f:format.raw>
+                    </div>
+
+                    <div class="menu-main col-xl-10 pr-xl-0 d-none d-xl-block">
+                        <f:format.raw>{menu-main}</f:format.raw>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+    <!-- Header Section End -->
+
+</f:section>
+</html>

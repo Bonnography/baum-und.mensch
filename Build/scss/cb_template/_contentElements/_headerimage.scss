@@ -1,0 +1,15 @@
+.header-image {
+
+  img {
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .header-image {
+    img {
+      height: auto;
+    }
+  }
+}

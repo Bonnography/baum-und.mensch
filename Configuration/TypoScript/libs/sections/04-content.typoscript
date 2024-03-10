@@ -1,0 +1,50 @@
+#
+# part for the content rendering
+#
+# ####
+
+lib.section-content = COA
+lib.section-content {
+    10 = FLUIDTEMPLATE
+    10 {
+        templateRootPaths {
+            0 = EXT:cb_template/Resources/Private/Templates/Page/Backendlayouts
+        }
+
+        layoutRootPaths {
+            0 = EXT:cb_template/Resources/Private/Layouts/Page/Backendlayouts
+        }
+
+        partialRootPaths {
+            0 = EXT:cb_template/Resources/Private/Partials/Page/Backendlayouts
+        }
+
+        variables {
+            headerimage < styles.content.get
+            headerimage {
+                select.where = colPos=0
+            }
+            content < styles.content.get
+            content {
+                select.where = colPos=5
+            }
+            contentBl < styles.content.get
+            contentBl {
+                select.where = colPos=10
+            }
+        }
+        templateName.stdWrap.cObject = CASE
+        templateName.stdWrap.cObject {
+            key.data = pageLayout
+
+            default = TEXT
+            default.value = Default
+
+            pagets__homepage = TEXT
+            pagets__homepage.value = Homepage
+
+            pagets__error = TEXT
+            pagets__error.value = Error
+        }
+    }
+}

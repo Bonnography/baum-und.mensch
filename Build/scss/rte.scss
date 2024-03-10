@@ -1,0 +1,33 @@
+.btn-primary {
+  background: #080232;
+  color: #fff;
+  border-radius: 0;
+  border: 1px solid #080232;
+  padding: 8px 10px;
+}
+
+.btn-secondary {
+  border: 1px solid #080232;
+  color: #080232;
+  transition: all .6s;
+  border-radius: 0;
+  padding: 8px 10px;
+  background-color: #fff;
+}
+
+/* outfit regular */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit Normal Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../fonts/OutfitRegular.woff') format('woff'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+p {
+  font-family: 'Outfit Normal Regular', Sans-Serif;
+  font-size: 16px;
+}
+
+a {
+  color: #ff7f00;
+}

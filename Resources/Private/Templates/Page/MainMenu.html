@@ -1,0 +1,56 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+    <f:if condition="{mainnavigation}">
+        <nav id="menu-main">
+            <ul class="menu-main__list">
+                <f:for each="{mainnavigation}" as="listitem">
+                    <li class="menu-main_item lvl1{f:if(condition: '{listitem.active} || {listitem.data.shortcut} == {data.uid}', then: ' active')}{f:if(condition: listitem.children, then: ' w-submenu')}">
+                        <f:link.typolink class="menu-main_item__link lvl1" parameter="{listitem.link}">
+                            {listitem.title}
+                        </f:link.typolink>
+
+                        <f:if condition="{listitem.children}">
+                                <span class="w-submenu__opener lvl1 text-center {f:if(condition: listitem.active, then: 'open')}"></span>
+                            <ul class="menu-main__sub lvl2">
+                                <f:for each="{listitem.children}" as="lvl2Item">
+                                    <li class="menu-main__sub-item lvl2 {f:if(condition: lvl2Item.active, then: 'active')} {f:if(condition: '({lvl2Item.data.doktype} == 4 && {lvl2Item.data.shortcut} == {data.uid})', then: 'active')}">
+                                        <a href="{lvl2Item.link}" class="menu-main__sub-item_link lvl2" title="{lvl2Item.data.title} - Link">{lvl2Item.data.title}</a>
+                                    </li>
+                                </f:for>
+                            </ul>
+                        </f:if>
+                    </li>
+                </f:for>
+
+                <div class="mobile-meta-menu d-xl-none">
+                    <f:for each="{metaMenu}" as="metaMenuItem">
+                        <f:link.typolink class="menu-meta-link" parameter="{metaMenuItem.link}">
+                            {metaMenuItem.title}
+                        </f:link.typolink>
+                    </f:for>
+                    <f:if condition="{languageMenu.1.available}">
+                        <f:for each="{languageMenu}" as="languages">
+                            <f:if condition="{languages.active}">
+                                <f:else>
+                                    <f:if condition="{languages.available}">
+                                        <f:link.typolink parameter="{languages.link}"
+                                                         additionalAttributes="{hreflang:'{languages.hreflang}'}"
+                                                         title="{languages.title}" class="menu-meta-link menu-meta-link__languages {languages.title -> f:format.case(mode: 'lower')}{f:if(condition: languages.active, then: ' active')}">
+                                            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:languages.{languages.twoLetterIsoCode}"/>
+                                        </f:link.typolink>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                        </f:for>
+                    </f:if>
+                </div>
+            </ul>
+
+        </nav>
+
+
+    </f:if>
+
+</f:section>
+</html>

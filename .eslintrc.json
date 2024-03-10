@@ -1,0 +1,13 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "script",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": 2,
+    "no-var": "warn"
+  }
+}

@@ -1,0 +1,28 @@
+#
+# part for the header rendering, templating in fluid
+#
+# ####
+lib.section-header = COA
+lib.section-header {
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = header
+        templateRootPaths {
+            0 = EXT:cb_template/Resources/Private/Templates/Page
+        }
+
+        layoutRootPaths {
+            0 = EXT:cb_template/Resources/Private/Layouts/Page
+        }
+
+        partialRootPaths {
+            0 = EXT:cb_template/Resources/Private/Partials/Page
+        }
+        variables {
+            headerlogo < lib.page-head-logo
+            menu-main < lib.menu-main-fluid
+            menu-meta < lib.menu-meta
+            menu-language < lib.menu-language
+        }
+    }
+}

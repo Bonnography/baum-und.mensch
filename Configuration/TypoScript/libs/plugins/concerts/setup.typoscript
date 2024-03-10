@@ -1,0 +1,21 @@
+plugin.tx_cbtemplate_concertsdb {
+    settings {
+        orderBy = datetime
+        orderDirection = desc
+    }
+    view {
+        layoutRootPaths {
+            10 = EXT:cb_template/Resources/Private/Layouts/Concerts/
+        }
+        partialRootPaths {
+            10 = EXT:cb_template/Resources/Private/Partials/Concerts/
+            15 = EXT:cb_template/Resources/Private/Partials/ContentElements/
+        }
+        templateRootPaths {
+            10 = EXT:cb_template/Resources/Private/Templates/Concerts/
+        }
+    }
+    persistence {
+        storagePid = 19
+    }
+}

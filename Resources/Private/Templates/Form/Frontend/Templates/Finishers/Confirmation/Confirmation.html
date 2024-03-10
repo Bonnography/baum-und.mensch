@@ -1,0 +1,61 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:formvh="http://typo3.org/ns/TYPO3/CMS/Form/ViewHelpers" data-namespace-typo3-fluid="true">
+<div id="{form.identifier}" class="mb-5">
+
+    <f:if condition="{form.identfier} == 'amici-contactform'">
+        <h3><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.contactForm.header"/></h3>
+        <p><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.contactForm.data"/></p>
+    </f:if>
+
+    <f:if condition="{form.identfier} == 'amici-registration'">
+        <h3><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.registrationForm.header"/></h3>
+        <p><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.registrationForm.data"/></p>
+    </f:if>
+
+    <p>
+        <f:if condition="{form.formState.formValues.firstname}">Name: {form.formState.formValues.firstname} <f:if condition="{form.formState.formValues.lastname}">{form.formState.formValues.lastname}</f:if><f:if condition="{form.formState.formValues.lastname-contact-form}">{form.formState.formValues.lastname-contact-form}</f:if></f:if>
+        <f:if condition="{form.formState.formValues.phone}"><br>Tel.: {form.formState.formValues.phone}</f:if>
+        <f:if condition="{form.formState.formValues.email}"><br>E-Mail: {form.formState.formValues.email}</f:if>
+        <f:if condition="{form.formState.formValues.email-contact-form}"><br>E-Mail: {form.formState.formValues.email-contact-form}</f:if>
+        <f:if condition="{form.formState.formValues.vocal-group}"><br><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.vocal-group.properties.label"/>: {form.formState.formValues.vocal-group}</f:if>
+        <f:if condition="{form.formState.formValues.birthdate}"><br><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.birthdate.properties.label"/>: <f:format.date format="%d. %B %Y">{form.formState.formValues.birthdate}</f:format.date></f:if>
+        <br />
+        <f:if condition="{form.formState.formValues.experience-radio} == '0'">
+            <f:then>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:experience-radio.email.label"/>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.experience-radio.properties.options.Ja"/>
+            </f:then>
+            <f:else>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:experience-radio.email.label"/>
+                <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.experience-radio.properties.options.Nein"/>
+            </f:else>
+        </f:if>
+        <f:if condition="{form.formState.formValues.message}">
+            <br />
+            <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.yourExperience"/>{form.formState.formValues.message}
+        </f:if>
+    </p>
+
+
+    <f:if condition="{form.formState.formValues.message-contact-form}">
+        <p><strong><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:form.confirmation.yourMessage"/></strong></p>
+        <p>{form.formState.formValues.message-contact-form}</p>
+    </f:if>
+    <f:if condition="{form.formState.formValues.discover-multi-checkbox}">
+        <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.discover-multi-checkbox.properties.label"/>:
+        <ul style="padding-left: 20px;">
+            <f:for each="{form.formState.formValues.discover-multi-checkbox}" as="multiCheckbox">
+                <li><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.discover-multi-checkbox.properties.options.{multiCheckbox}"/></li>
+            </f:for>
+        </ul>
+
+    </f:if>
+    <formvh:renderAllFormValues renderable="{form.formDefinition}" as="formValue">
+        <f:if condition="{formValue.element.identifier} == 'consent-declaration'">
+            <f:if condition="{form.formState.formValues.consent-declaration} == 0">
+                <f:then><p><strong>Einwilligungserklärung:</strong> nein</p></f:then>
+                <f:else><p><strong>Einwilligungserklärung:</strong> <f:format.html><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang_form.xlf:element.{formValue.element.identifier}.properties.label"/></f:format.html></p></f:else>
+            </f:if>
+        </f:if>
+    </formvh:renderAllFormValues>
+</div>
+</html>

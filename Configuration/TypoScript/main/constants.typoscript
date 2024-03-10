@@ -1,0 +1,21 @@
+## loading default constants for the website
+
+company {
+    # cat=basic/SocialMedia/10; type=string; label=Facebook
+    facebook = https://www.facebook.com/amicimusicae
+    # cat=basic/SocialMedia/40; type=string; label=Favicon
+    favicon = typo3conf/ext/cb_template/Resources/Public/images/favicon.ico
+}
+
+[applicationContext == 'Development']
+    @import 'EXT:cb_template/Configuration/TypoScript/main/applicationContext/development.typoscript'
+[end]
+[applicationContext == 'Development/Testing']
+    @import 'EXT:cb_template/Configuration/TypoScript/main/applicationContext/development.typoscript'
+[end]
+[applicationContext == 'Development/Staging']
+    @import 'EXT:cb_template/Configuration/TypoScript/main/applicationContext/development.typoscript'
+[end]
+[applicationContext == 'Production']
+    @import 'EXT:cb_template/Configuration/TypoScript/main/applicationContext/production.typoscript'
+[end]

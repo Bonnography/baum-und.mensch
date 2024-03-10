@@ -1,0 +1,248 @@
+
+renderingOptions:
+  submitButtonLabel: Absenden
+type: Form
+identifier: amici-registration
+label: amici-registrationform
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Nachricht vom amici musicae Registrierungsformular'
+      recipients:
+        info@codebomb-websolutions.de: 'amici musicae'
+      senderAddress: 'noreply@amici-musicae.de'
+      senderName: '{firstname} {lastname}'
+      addHtmlPart: true
+      attachUploads: true
+      translation:
+        language: Default
+      title: ''
+      templateName: AdminEmailTemplate
+      templateRootPaths:
+        20: 'EXT:cb_template/Resources/Private/Templates/Form/Frontend/Templates/Finishers/Email/Admin/'
+      carbonCopyRecipients:
+        heiko.paulick@gmail.com: 'Heiko Paulick'
+        felix.lingath@amici-musicae.de: 'Felix Lingath'
+    identifier: EmailToReceiver
+  -
+    options:
+      subject: 'Registrierung über das amici musicae Registrierungsformular'
+      recipients:
+        '{email}': '{firstname} {lastname}'
+      senderAddress: noreply@amici-musicae.de
+      senderName: 'amici musicae'
+      addHtmlPart: true
+      attachUploads: true
+      title: ''
+      templateName: UserEmailTemplate
+      templateRootPaths:
+        20: 'EXT:cb_template/Resources/Private/Templates/Form/Frontend/Templates/Finishers/Email/User/'
+    identifier: EmailToSender
+  -
+    options:
+      message: ''
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: 'Previous step'
+      nextButtonLabel: 'Next step'
+    type: Page
+    identifier: page-1
+    label: ''
+    renderables:
+      -
+        type: GridRow
+        identifier: gridrow-1
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Text
+            identifier: firstname
+            label: Vorname
+            properties:
+              fluidAdditionalAttributes:
+                placeholder: Vorname
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+          -
+            defaultValue: ''
+            type: Text
+            identifier: lastname
+            label: Nachname
+            properties:
+              elementClassAttribute: test
+              fluidAdditionalAttributes:
+                required: required
+                placeholder: Nachname
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        type: GridRow
+        identifier: gridrow-3
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            properties:
+              fluidAdditionalAttributes:
+                min: ''
+                max: ''
+                step: 1
+                required: required
+              elementDescription: ''
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            type: Date
+            identifier: birthdate
+            label: Geburtsdatum
+            validators:
+              -
+                identifier: NotEmpty
+          -
+            properties:
+              options:
+                Sopran: Sopran
+                Mezzo: Mezzo
+                Alt: Alt
+                Tenor: Tenor
+                Bariton: Bariton
+                Bass: Bass
+                Violine-1: 'Violine 1'
+                Violine-2: 'Violine 2'
+                Bratsche: Bratsche
+                Cello: Cello
+                Kontrabass: Kontrabass
+              elementDescription: ''
+              fluidAdditionalAttributes:
+                required: required
+              prependOptionLabel: 'Bitte wählen'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            type: SingleSelect
+            identifier: vocal-group
+            label: 'Register | Stimmgruppe'
+            validators:
+              -
+                identifier: NotEmpty
+      -
+        properties:
+          containerClassAttribute: 'message-if-previous-experience-radio'
+          options:
+            0: Ja
+            1: Nein
+        type: RadioButton
+        identifier: experience-radio
+        label: 'Du hast bereits Chor-/Ensemble- oder Orchester-Erfahrung?'
+      -
+        defaultValue: ''
+        type: Textarea
+        identifier: message
+        label: 'Bitte erläutere uns kurz deine Vorerfahrung.'
+        properties:
+          elementClassAttribute: 'message-if-previous-experience hide'
+          labelClassAttribute: 'message-if-previous-experience hide'
+          fluidAdditionalAttributes:
+            minlength: '0'
+            maxlength: '500'
+        validators:
+          -
+            options:
+              minimum: '0'
+              maximum: '500'
+            identifier: StringLength
+      -
+        type: GridRow
+        identifier: gridrow-2
+        label: 'Grid: Row'
+        renderables:
+          -
+            defaultValue: ''
+            type: Email
+            identifier: email
+            label: E-Mail-Adresse
+            properties:
+              fluidAdditionalAttributes:
+                required: required
+                placeholder: 'E-Mail*'
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+            validators:
+              -
+                identifier: EmailAddress
+              -
+                identifier: NotEmpty
+          -
+            defaultValue: ''
+            type: Telephone
+            identifier: phone
+            label: Telefonnummer
+            properties:
+              elementDescription: ''
+              fluidAdditionalAttributes:
+                placeholder: Telefon
+              gridColumnClassAutoConfiguration:
+                viewPorts:
+                  xs:
+                    numbersOfColumnsToUse: '12'
+                  sm:
+                    numbersOfColumnsToUse: '12'
+      -
+        properties:
+          options:
+            1: 'durch Freunde, Familie, Bekannte oder/und Verwandte'
+            2: 'ich habe ein Konzert der »amici musicae« besucht'
+            3: 'über Online-Suchmaschine'
+            4: 'durch Facebook, Instagram & Co.'
+            5: 'durch das Radio, Spotify oder eine unserer CDs'
+            6: Sonstiges
+        type: MultiCheckbox
+        identifier: discover-multi-checkbox
+        label: 'Wie bist Du auf »amici musicae« gestoßen?'
+      -
+        type: Checkbox
+        identifier: consent-declaration
+        label: ''
+        properties:
+          elementDescription: ''
+          elementClassAttribute: declaration
+          fluidAdditionalAttributes:
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        renderingOptions:
+          doNotShowLabel: true
+        validators:
+          -
+            identifier: Recaptcha
+        type: Recaptcha
+        identifier: recaptcha-1
+        label: reCAPTCHA

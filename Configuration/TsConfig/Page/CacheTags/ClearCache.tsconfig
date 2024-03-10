@@ -1,0 +1,6 @@
+[19 in tree.rootLineIds]
+    TCEMAIN.clearCacheCmd = cacheTag:concerts_list
+[end]
+[2 in tree.rootLineIds]
+    config.cache_clearAtMidnight = 1
+[end]

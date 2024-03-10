@@ -1,0 +1,62 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{data.CType} == 'textmedia'">
+    <f:then>
+        <f:if condition="{data.imageorient} == 0">
+            <f:then>
+                <picture>
+                    <source
+                            media="(max-width: 375px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy"/>
+                    <source
+                            media="(max-width: 375px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+                    <source
+                            media="(max-width: 768px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 768, treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy"/>
+                    <source
+                            media="(max-width: 768px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 768, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+                    <source
+                            media="(max-width: 1920px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 1920,  treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy" />
+                    <source
+                            media="(max-width: 1920px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 1920, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+                    <f:image image="{file}" class="img-fluid" loading="lazy" alt="{file.alternative}" title="{file.title}" />
+                </picture>
+            </f:then>
+            <f:else>
+                <picture>
+                    <source
+                            media="(max-width: 375px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy" />
+                    <source
+                            media="(max-width: 375px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+                    <source
+                            media="(max-width: 768px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy" />
+                    <source
+                            media="(max-width: 768px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 375, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+
+                    <source
+                            media="(max-width: 1920px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 800,  treatIdAsReference:1, fileExtension: 'png')}" type="image/png" loading="lazy" />
+                    <source
+                            media="(max-width: 1920px)"
+                            srcset="{f:uri.image(image: file, maxWidth: 800, treatIdAsReference:1, fileExtension: 'jpg')}" type="image/jpeg" loading="lazy" />
+                    <f:image image="{file}" class="img-fluid" loading="lazy" alt="{file.alternative}" title="{file.title}" />
+                </picture>
+            </f:else>
+
+
+        </f:if>
+    </f:then>
+    <f:else>
+        <f:media class="image-embed-item img-fluid" file="{file}" width="{dimensions.width}" height="{dimensions.height}" alt="{file.alternative}" title="{file.title}" loading="{settings.media.lazyLoading}" decoding="{settings.media.imageDecoding}" />
+    </f:else>
+</f:if>
+
+
+</html>

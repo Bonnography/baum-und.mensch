@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2023-08-03UTC08:39:270">
+        <header>
+            <authorName>Benjamin Bomberg</authorName>
+            <authorEmail>benjamin.bomberg@codebomb-websolutions.de</authorEmail>
+        </header>
+        <body>
+        <trans-unit id="tt_content.header_position">
+            <source>Header position</source>
+        </trans-unit>
+        <trans-unit id="tt_content.relatedNews">
+            <source>Related News?</source>
+        </trans-unit>
+        <trans-unit id="tt_content.news.wizard.title">
+            <source>News Element</source>
+        </trans-unit>
+        <trans-unit id="tt_content.news.wizard.description">
+            <source>Element to show news in frontend and select if related news or list view</source>
+        </trans-unit>
+        <trans-unit id="tt_content.headerImage.wizard.title">
+            <source>Header image</source>
+        </trans-unit>
+        <trans-unit id="tt_content.headerImage.wizard.description">
+            <source>Element to show header image in frontend</source>
+        </trans-unit>
+        <trans-unit id="tt_content.headline.wizard.title">
+            <source>Headline</source>
+        </trans-unit>
+        <trans-unit id="tt_content.headline.wizard.description">
+            <source>Headline Element for display maintainable headline</source>
+        </trans-unit>
+        <trans-unit id="tt_content.inlineElements.wizard.title">
+            <source>Inline Elements</source>
+        </trans-unit>
+        <trans-unit id="tt_content.inlineElements.wizard.description">
+            <source>Get the possibility to show gridelements in 2 and 3 cols or for carousel</source>
+        </trans-unit>
+        <trans-unit id="inline_item">
+            <source>Item</source>
+        </trans-unit>
+        <trans-unit id="tt_content.removeBottomSpace">
+            <source>Remove bottom space</source>
+        </trans-unit>
+        <trans-unit id="tt_content.removeBottomSpace.check">
+            <source>Yes</source>
+        </trans-unit>
+        <trans-unit id="tt_content.removeBottomSpace.check">
+            <source>Yes</source>
+        </trans-unit>
+        <trans-unit id="tt_content.image_frontend_layout">
+            <source>Frontend Layout</source>
+        </trans-unit>
+        <trans-unit id="tt_content.button_style">
+            <source>Primary or Secondary Button</source>
+        </trans-unit>
+        </body>
+    </file>
+</xliff>

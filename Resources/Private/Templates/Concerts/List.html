@@ -1,0 +1,128 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+{namespace cbw=CodebombWebsolutions\CbTemplate\ViewHelpers}
+<f:layout name="Default"></f:layout>
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:then>
+            <f:render partial="Header/Header" arguments="{_all}"/>
+        </f:then>
+    </f:if>
+    <f:if condition="{data.switch} == '1'">
+        <div class="concerts-filter__wrapper">
+            <select id="year" class="concerts-filter">
+                <option value=""><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.filterYear"/></option>
+                <f:variable name="concertDates" value="{cbw:ArrayUnique(array: items, field: 'date')}" />
+                <f:for each="{concertDates}" as="concert">
+                    <option value="{concert}">{concert}</option>
+                </f:for>
+            </select>
+            <select id="category" class="concerts-filter">
+                <option value=""><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.filterCategory"/></option>
+                <f:variable name="concertCategories" value="{cbw:ArrayUnique(array: items, field: 'categories')}" />
+                <f:for each="{concertCategories}" as="category">
+                    <option value="{category}">{category}</option>
+                </f:for>
+            </select>
+        </div>
+        <f:variable name="reviewLayout" value="1" />
+    </f:if>
+    <f:if condition="{items}">
+        <f:then>
+            <f:for each="{items}" as="concert" iteration="i">
+
+                <f:variable name="concertCategories" value="{cbw:ArrayToList(array: concert.categories)}" />
+
+                <article class="article-concert" data-year="{concert.date -> f:format.date(format: 'Y')}" data-category="{concertCategories}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <f:if condition="{concert.concertImage}">
+                                <f:media
+                                        class="img-fluid"
+                                        file="{concert.concertImage}"
+                                        alt="{concert.concertImage.alternative}"
+                                        title="{concert.concertImage.title}"
+                                        additionalAttributes="{srcset: '{f:uri.image(image: concert.concertImage, maxWidth: 375)} 375w, {f:uri.image(image: concert.concertImage, maxWidth: 576)} 576w, {f:uri.image(image: concert.concertImage, maxWidth: 768)} 768w,{f:uri.image(image: concert.concertImage, maxWidth: 420)} 992w,{f:uri.image(image: concert.concertImage, maxWidth: 420)} 1200w',sizes: '(min-width: 1200px) 40vw, 100vw'}"
+                                />
+                            </f:if>
+                        </div>
+                        <div class="col-md-8">
+                            <f:if condition="{concert.subtitle}">
+                                <f:then>
+                                    <header>
+                                        <h2>{concert.title}</h2>
+                                        <p class="subtitle">{concert.subtitle}</p>
+                                    </header>
+                                </f:then>
+                                <f:else>
+                                    <h2>{concert.title}</h2>
+                                </f:else>
+                            </f:if>
+                            <f:if condition="{concert.date}">
+                                <p class="concert-date">
+                                    <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.date"/>
+                                    <f:format.date format="d.m.Y">{concert.date}</f:format.date>
+                                </p>
+                            </f:if>
+                            <f:if condition="{concert.time}">
+                                <p class="concert-time">
+                                    <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.time"/>
+                                    {concert.time}
+                                </p>
+                            </f:if>
+                            <f:if condition="{concert.location}">
+                                <p class="concert-location">
+                                    <f:translate
+                                            key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.location"/>
+                                    {concert.location}
+                                </p>
+                            </f:if>
+                            <f:if condition="{concert.teaser}">
+                                <div class="concert-teaser">
+                                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:spaceless>{concert.teaser}</f:spaceless></f:format.html>
+                                </div>
+                            </f:if>
+                            <f:if condition="{concert.price} && {reviewLayout} != 1">
+                                <p class="concert-price">{concert.price}</p>
+                            </f:if>
+
+                            <f:if condition="{concert.description}">
+                                <div class="btn btn-secondary description-expander">
+                                    <span class="more d-inline-block">
+                                        <f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.moreInformation"/>
+                                    </span>
+                                    <span class="less d-none"><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.lessInformation"/></span>
+                                    <span class="arrow"></span>
+                                </div>
+                            </f:if>
+
+                            <f:if condition="{concert.ticketLink} && {reviewLayout} != 1">
+                                <f:link.typolink parameter="{concert.ticketLink}" class="btn btn-primary external-ticket-link">
+                                    <f:translate
+                                            key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.tickets"/>
+                                    <span class="external-link-icon"></span>
+                                </f:link.typolink>
+                            </f:if>
+                            <div class="expand closed">
+                                <div class="inner">
+                                    <div class="col-12">
+                                        <div class="concert-description">
+                                            <f:format.html parseFuncTSPath="lib.parseFunc_RTE"><f:spaceless>{concert.description}</f:spaceless></f:format.html>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </f:for>
+        </f:then>
+        <f:else>
+            <div class="mt-3 mb-3">
+                <h3><f:translate key="LLL:EXT:cb_template/Resources/Private/Language/locallang.xlf:concerts.noConcerts"/></h3>
+            </div>
+
+        </f:else>
+    </f:if>
+
+</f:section>
+</html>

@@ -1,0 +1,43 @@
+.splide {
+  padding: 20px 0;
+}
+
+.amici-carousel {
+  font-size: 1.25rem;
+}
+// Active Slide
+.splide__slide.is-active {
+
+}
+.splide__slide {
+  text-align: center;
+}
+// Arrow Tweaks for Accessibility
+.splide .splide__arrow {
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  transform: none;
+  border-radius: unset;
+  width: 50px;
+  opacity: .9;
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+.splide__arrow.splide__arrow--prev {
+  left: -50px;
+  background: transparent;
+}
+.splide__arrow.splide__arrow--next {
+  right: -50px;
+  background: transparent;
+}
+
+@media screen and (min-width: 768px)
+{
+  .splide__slide {
+    padding: 0 20px;
+  }
+}

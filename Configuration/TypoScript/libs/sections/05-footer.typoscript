@@ -1,0 +1,36 @@
+#
+# part for the footer rendering, templating in fluid
+#
+# ####
+
+lib.section-footer = COA
+lib.section-footer {
+    10 = FLUIDTEMPLATE
+    10 {
+        templateName = footer
+        templateRootPaths {
+            0 = EXT:cb_template/Resources/Private/Templates/Page
+        }
+
+        layoutRootPaths {
+            0 = EXT:cb_template/Resources/Private/Layouts/Page
+        }
+
+        partialRootPaths {
+            0 = EXT:cb_template/Resources/Private/Partials/Page
+        }
+        variables {
+            menu-footer < lib.menu-footer
+            menu-social < lib.menu-social-media
+            menu-language < lib.menu-language
+            copyright = TEXT
+            copyright {
+                data = date : U
+                strftime = %Y
+                wrap3 = <div class="copyright-text">|</div>
+                wrap2 = <p>|</p>
+                noTrimWrap =  | Copyright &copy; | amici musicae |
+            }
+        }
+    }
+}

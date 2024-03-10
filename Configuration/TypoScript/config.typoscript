@@ -1,0 +1,82 @@
+[applicationContext == 'Development']
+    config.absRefPrefix = /
+    config.admPanel = 1
+    config.contentObjectExeptionHandler = 0
+[end]
+[applicationContext == 'Development/Staging']
+    config.absRefPrefix = /
+    config.admPanel = 1
+    config.contentObjectExeptionHandler = 1
+[end]
+[applicationContext == 'Production']
+    config.absRefPrefix = /
+    config.admPanel = 0
+    config.contentObjectExeptionHandler = 1
+[end]
+config {
+    ## enable indexing for indexed search
+    index_enable = 1
+    index_externals = 1
+    index_metatags = 1
+
+    ## disable no-cache
+    no_cache = 0
+
+    ## debug info
+    # disable it on live deploy
+    debug = 1
+
+    ## show admin panel
+    # disable it on live deploy
+    admPanel = 1
+
+    ## page title + template title
+    pageTitleFirst = 1
+
+    ## store js external
+    removeDefaultJS = external
+
+    ## uncrypt mail to (-5..5)
+    spamProtectEmailAddresses = -2
+
+    ## substitude @-sign
+    spamProtectEmailAddresses_atSubst = <span>&#64;</span>
+
+    ## doctype
+    doctype = html5
+
+    ## avoid double page titles
+    noPageTitle = 2
+
+    ## cache config
+    sendCacheHeaders = 0
+
+    ## cache for one days (all pages that need different caching will be set on the page properties)
+    cache_period = 86400
+
+    contentObjectExeptionHandler = 0
+
+    ## set default language
+
+    ## language used in html
+    htmlTag_langKey = de
+
+    linkVars = L(int)
+    sys_language_uid = 0
+    sys_language_overlay = 0
+    sys_language_mode = strict
+    ## language
+    language = de
+    ## default language
+    locale_all = de_DE.UTF-8
+    htmlTag_setParams = lang="de" dir="ltr"
+
+    #Headers for Website
+    additionalHeaders.10.header = strict-transport-security:max-age=31536000;includeSubDomains; preload
+    # is possible only for internet explorer Content Security Police is newer and replace x frame options
+    additionalHeaders.20.header = X-Frame-Options:SAMEORIGIN
+    additionalHeaders.30.header = Content-Security-Policy: frame-ancestors 'none';upgrade-insecure-requests; base-uri 'self';
+    additionalHeaders.40.header = X-Content-Type-Options: nosniff
+    additionalHeaders.50.header = Permissions-Policy: geolocation=(), midi=(), camera=(), usb=(), magnetometer=(), accelerometer=(), vr=(), speaker=(), ambient-light-sensor=(), gyroscope=(), microphone=()
+    additionalHeaders.60.header = Referrer-Policy:strict-origin-when-cross-origin
+}

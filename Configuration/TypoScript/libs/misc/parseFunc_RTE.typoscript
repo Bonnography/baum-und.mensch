@@ -1,0 +1,119 @@
+#lib.parseFunc_RTE{
+#	nonTypoTagStdWrap.encapsLines.addAttributes >
+#	externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
+
+# content of li's will be wrapped in <p> if not yet done
+#	externalBlocks := addToList(li)
+#	externalBlocks {
+#		ul {
+#			stripNL = 1
+#			callRecursive = 1
+#			callRecursive.alternativeWrap = <ul class="content">|</ul>
+#			stdWrap >
+#		}
+#		ol < .ul
+#		ol.callRecursive.alternativeWrap = <ol class="content">|</ol>
+#		li {
+#			stripNL = 1
+#			callRecursive = 1
+#		}
+#	}
+
+# map b and i to strong and em
+# we do it in the output because editors won't be able to edit it properly otherwise
+#	nonTypoTagStdWrap.HTMLparser {
+#		tags.b.remap = strong
+#		tags.i.remap = em
+#	}
+#}
+
+// Creates persistent ParseFunc setup for RTE content (which is mainly HTML) based on the "ts_css" transformation.
+lib.parseFunc_RTE >
+lib.parseFunc_RTE < lib.parseFunc
+lib.parseFunc_RTE {
+    // Processing <ol>, <ul> and <table> blocks separately
+    externalBlocks = article, aside, blockquote, div, dd, dl, footer, header, nav, ol, section, table, ul, pre
+    externalBlocks {
+        // prevent empty <p> tags in nested lists:
+        ol {
+            stripNL = 1
+            stdWrap.parseFunc = < lib.parseFunc
+        }
+        ul {
+            stripNL = 1
+            stdWrap.parseFunc = < lib.parseFunc
+        }
+        table {
+            stripNL = 1
+            stdWrap {
+                HTMLparser = 1
+                HTMLparser {
+                    tags.table.fixAttrib.class {
+                        default = contenttable
+                        always = 1
+                        list = contenttable
+                    }
+                    keepNonMatchedTags = 1
+                }
+                outerWrap = <div class="responsive-table">|</div>
+            }
+            HTMLtableCells = 1
+            HTMLtableCells {
+                // Recursive call to self but without wrapping non-wrapped cell content
+                default.stdWrap {
+                    parseFunc = < lib.parseFunc_RTE
+                    parseFunc.nonTypoTagStdWrap.encapsLines.nonWrappedTag =
+                }
+                addChr10BetweenParagraphs = 1
+            }
+        }
+        div {
+            stripNL = 1
+            callRecursive = 1
+        }
+        article < .div
+        aside < .div
+        blockquote < .div
+        footer < .div
+        header < .div
+        nav < .div
+        section < .div
+        dl < .div
+        dd < .div
+
+        pre {
+            stripNL = 1
+            stdWrap.parseFunc =< lib.parseFunc
+            stdWrap.parseFunc.makelinks = 0
+        }
+    }
+    nonTypoTagStdWrap {
+        encapsLines {
+            encapsTagList = p,pre,h1,h2,h3,h4,h5,h6,hr,dt
+            remapTag.DIV = P
+            nonWrappedTag = P
+            innerStdWrap_all.ifBlank = &nbsp;
+            // disable the default bodytext class:
+            #addAttributes.P.class = bodytext
+            # addAttributes.P.class.setOnly=blank
+        }
+    }
+    nonTypoTagStdWrap {
+        HTMLparser = 1
+        HTMLparser {
+            keepNonMatchedTags = 1
+            htmlSpecialChars = 2
+        }
+    }
+    // if you want a default class for images in bodytext:
+    # nonTypoTagStdWrap.HTMLparser.tags.img.fixAttrib.class {
+    #   default = rte-img
+    # }
+}
+
+// Allow <code> and <pre> in RTE:
+#lib.parseFunc.allowTags := addToList(code,pre)
+#lib.parseFunc_RTE.allowTags := addToList(code,pre)
+lib.parseFunc_RTE.allowTags := addToList(SHY)
+
+

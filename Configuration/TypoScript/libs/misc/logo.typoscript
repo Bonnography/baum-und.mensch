@@ -1,0 +1,21 @@
+
+#
+# example for page logo
+#
+# ####
+
+lib.page-head-logo = IMAGE
+lib.page-head-logo {
+    file = EXT:cb_template/Resources/Public/images/amici-logo-new.svg
+    params = class="img-fluid"
+    altText.data = leveltitle:0
+    titleText = Amici Logo
+    stdWrap {
+        wrap = <div id="page-logo">|</div>
+        typolink {
+            parameter.data = leveluid:0
+            ATagParams = title="{leveltitle:0}" class="page-logo"
+            ATagParams.insertData = 1
+        }
+    }
+}

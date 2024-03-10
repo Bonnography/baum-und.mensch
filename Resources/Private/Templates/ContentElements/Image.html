@@ -1,0 +1,72 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:if condition="{data.header}">
+        <f:render section="Header" optional="true">
+            <f:render partial="Header/All" arguments="{_all}"/>
+        </f:render>
+    </f:if>
+    <f:if condition="{data.image_frontend_layout} == 1">
+        <f:then>
+            <div class="image-gallery ce-image ce-{gallery.position.horizontal} ce-{gallery.position.vertical}">
+                <f:render section="Gallery" arguments="{_all}"/>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="ce-image ce-{gallery.position.horizontal} ce-{gallery.position.vertical}">
+                <f:render partial="Media/Gallery" arguments="{_all}"/>
+            </div>
+        </f:else>
+    </f:if>
+</f:section>
+<f:section name="Gallery">
+    <f:if condition="{gallery.rows}">
+        <div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}"
+             data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+            <f:if condition="{gallery.position.horizontal} == 'center'">
+                <div class="ce-outer">
+                    <div class="ce-inner">
+            </f:if>
+            <f:if condition="{gallery.rows -> f:count()} > 3">
+                <f:then>
+                    <div class="splide" id="imageSlide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <f:for each="{gallery.rows}" as="row">
+                                    <f:for each="{row.columns}" as="column">
+                                        <li class="splide__slide">
+                                            <f:render partial="Media/Type"
+                                                      arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"/>
+                                        </li>
+                                    </f:for>
+                                </f:for>
+                            </ul>
+                        </div>
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="image-gallery-row">
+                        <f:for each="{gallery.rows}" as="row">
+                            <div class="image-gallery-item image-gallery-items-{gallery.rows -> f:count()}">
+                                <f:for each="{row.columns}" as="column">
+                                    <f:render partial="Media/Type"
+                                              arguments="{file: column.media, dimensions: column.dimensions, data: data, settings: settings}"/>
+                                </f:for>
+                            </div>
+                        </f:for>
+                    </div>
+                </f:else>
+            </f:if>
+
+            <f:if condition="{gallery.position.horizontal} == 'center'">
+        </div>
+        </div>
+    </f:if>
+    </div>
+    </f:if>
+
+</f:section>
+<f:section name="imageContainer">
+
+</f:section>
+</html>

@@ -1,0 +1,22 @@
+.content.inlineElements {
+  .content-column-item {
+    margin-bottom: 40px;
+  }
+  &:last-child {
+    .content-column-item {
+      margin-bottom: 0;
+    }
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .content.inlineElements {
+    .content-column-item {
+      margin-bottom: 0;
+    }
+  }
+  .content-column-item {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:felogin/Resources/Private/Language/locallang.xlf" date="2011-10-17T20:22:32Z" product-name="felogin">
+		<header/>
+		<body>
+			<trans-unit id="login_user_info" resname="login_user_info">
+				<target>Sie sind jetzt eingeloggt als '%s'</target>
+			</trans-unit>
+			<trans-unit id="welcome_header" resname="welcome_header">
+				<target>Benutzerlogin</target>
+			</trans-unit>
+			<trans-unit id="welcome_message" resname="welcome_message">
+				<target>Geben Sie hier Ihren Benutzernamen und Ihr Passwort ein, um sich auf der Website anzumelden</target>
+			</trans-unit>
+			<trans-unit id="logout_header" resname="logout_header">
+				<target>Sie haben sich abgemeldet.</target>
+			</trans-unit>
+			<trans-unit id="logout_message" resname="logout_message">
+				<target>Sie haben sich gerade von Ihrer Benutzersitzung auf dieser Website abgemeldet. Sie können sich erneut oder als ein anderer Benutzer über das unten stehende Formular anmelden.</target>
+			</trans-unit>
+			<trans-unit id="error_header" resname="error_header">
+				<target>Anmeldung fehlgeschlagen</target>
+			</trans-unit>
+			<trans-unit id="submit_btn" resname="submit_btn">
+				<target>Einloggen</target>
+			</trans-unit>
+			<trans-unit id="error_message" resname="error_message" xml:space="preserve">
+				<target>Bei der Anmeldung ist ein Fehler aufgetreten. Wahrscheinlich haben Sie den Benutzernamen oder das Passwort nicht richtig eingegeben.
+                        Vergewissern Sie sich, dass Sie sie genau so eingeben, wie sie sind, einschließlich Groß- und Kleinschreibung.
+                        Eine andere Möglichkeit ist, dass die Cookies in Ihrem Webbrowser deaktiviert sind.</target>
+			</trans-unit>
+			<trans-unit id="success_header" resname="success_header">
+				<target>Anmeldung erfolgreich</target>
+			</trans-unit>
+			<trans-unit id="success_message" resname="success_message">
+				<target>Sie sind jetzt eingeloggt als '###USER###'</target>
+			</trans-unit>
+			<trans-unit id="status_header" resname="status_header">
+				<target>Aktueller Status: eingeloggt</target>
+			</trans-unit>
+			<trans-unit id="status_message" resname="status_message">
+				<target>Dies ist Ihr aktueller Status</target>
+			</trans-unit>
+			<trans-unit id="cookie_warning" resname="cookie_warning">
+				<target>Warnung! Es besteht die Möglichkeit, dass Cookies in Ihrem Webbrowser nicht aktiviert sind! Wenn Ihr Login beim nächsten Klick verschwindet, ist das der Fall und Sie sollten sofort Cookies aktivieren (oder Cookies von dieser Website akzeptieren)!</target>
+			</trans-unit>
+			<trans-unit id="username" resname="username">
+				<target>Benutzername: </target>
+			</trans-unit>
+			<trans-unit id="password" resname="password">
+				<target>Passwort: </target>
+			</trans-unit>
+			<trans-unit id="login" resname="login">
+				<target>Amici Benutzerbereich</target>
+			</trans-unit>
+			<trans-unit id="permalogin" resname="permalogin">
+				<target>Eingeloggt bleiben</target>
+			</trans-unit>
+			<trans-unit id="logout" resname="logout">
+				<target>Logout</target>
+			</trans-unit>
+			<trans-unit id="send_password" resname="send_password">
+				<target>Passwort senden</target>
+			</trans-unit>
+			<trans-unit id="reset_password" resname="reset_password">
+				<target>Passwort zurücksetzen</target>
+			</trans-unit>
+			<trans-unit id="change_password_header" resname="change_password_header">
+				<target>Ändern Sie Ihr Passwort</target>
+			</trans-unit>
+			<trans-unit id="change_password_description" resname="change_password_description">
+				<target>Bitte geben Sie Ihr neues Passwort zweimal ein.</target>
+			</trans-unit>
+			<trans-unit id="password_requirement" resname="password_requirement">
+				<target>Vergewissern Sie sich, dass Ihr neues Passwort den folgenden Anforderungen entspricht:</target>
+			</trans-unit>
+			<trans-unit id="change_password_nolinkprefix_message" resname="change_password_nolinkprefix_message">
+				<target>Error: there is no prefix for the link. Please set one of the following in your typoscript: plugin.tx_felogin_pi1.feloginBaseURL = http://yourdomain/, config.baseURL = http://yourdomain/, config.absRefPrefix = /</target>
+			</trans-unit>
+			<trans-unit id="change_password_notvalid_message" resname="change_password_notvalid_message">
+				<target>The link you clicked is not valid. Please repeat the forgot password procedure.</target>
+			</trans-unit>
+			<trans-unit id="change_password_notequal_message" resname="change_password_notequal_message">
+				<target>The passwords are not equal, please enter your new password twice. Password needs a minimum length of %s chars.</target>
+			</trans-unit>
+			<trans-unit id="change_password_tooshort_message" resname="change_password_tooshort_message">
+				<target>The password length is too short. Please enter your new password twice. Password needs a minimum length of %s chars.</target>
+			</trans-unit>
+			<trans-unit id="change_password_done_message" resname="change_password_done_message">
+				<target>Your password has been saved. You can now login with your new password.</target>
+			</trans-unit>
+			<trans-unit id="change_password" resname="change_password">
+				<target>Ändern Sie Ihr Passwort</target>
+			</trans-unit>
+			<trans-unit id="newpassword_label1" resname="newpassword_label1">
+				<target>Neues Passwort eingeben</target>
+			</trans-unit>
+			<trans-unit id="newpassword_label2" resname="newpassword_label2">
+				<target>Wiederholung des neuen Passworts</target>
+			</trans-unit>
+			<trans-unit id="your_email" resname="your_email">
+				<target>Ihre Email</target>
+			</trans-unit>
+			<trans-unit id="forgot_header" resname="forgot_header">
+				<target>Haben Sie Ihr Passwort vergessen?</target>
+			</trans-unit>
+			<trans-unit id="forgot_email_password" resname="forgot_email_password" xml:space="preserve">
+				<target>Ihr Passwort
+Hallo %s
+
+Ihr Benutzername lautet "%s"
+Ihr Passwort lautet "%s"</target>
+			</trans-unit>
+			<trans-unit id="forgot_email_nopassword" resname="forgot_email_nopassword" xml:space="preserve">
+				<target>Ihr Passwort
+Hallo %s
+
+Wir konnten keinen Benutzernamen für diese E-Mail-Adresse finden und können Ihnen daher das Passwort nicht zusenden. Wahrscheinlich haben Sie die E-Mail-Adresse falsch geschrieben (Groß-/Kleinschreibung macht einen Unterschied) oder vielleicht haben Sie sich noch nicht registriert?</target>
+			</trans-unit>
+			<trans-unit id="forgot_validate_reset_password" resname="forgot_validate_reset_password" xml:space="preserve">
+				<target>Ihr neues Passwort
+Hallo %s,
+
+Diese E-Mail wurde als Antwort auf Ihre Anfrage, Ihr Passwort zurückzusetzen, gesendet. Bitte klicken Sie auf den untenstehenden Link.
+%s
+
+Aus Sicherheitsgründen ist dieser Link nur so lange aktiv, bis %s. Wenn Sie den Link nicht vorher besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</target>
+			</trans-unit>
+			<trans-unit id="forgot_message" resname="forgot_message">
+				<target>Bitte geben Sie die E-Mail-Adresse ein, mit der Sie Ihr Benutzerkonto registriert haben. Klicken Sie dann auf "Passwort senden" und Ihr Passwort wird Ihnen sofort per E-Mail zugeschickt. Achten Sie auf die korrekte Schreibweise Ihrer E-Mail-Adresse.</target>
+			</trans-unit>
+			<trans-unit id="forgot_message_emailSent" resname="forgot_message_emailSent">
+				<target>Ihr Passwort wurde jetzt an die folgende E-Mail-Adresse gesendet %s</target>
+			</trans-unit>
+			<trans-unit id="forgot_reset_message" resname="forgot_reset_message">
+				<target>Bitte geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein. Eine Anleitung zum Zurücksetzen des Passworts wird Ihnen umgehend per E-Mail zugesandt.</target>
+			</trans-unit>
+			<trans-unit id="forgot_reset_message_emailSent" resname="forgot_reset_message_emailSent">
+				<target>Eine E-Mail mit einem Link zum Zurücksetzen Ihres Passworts wurde an die in Ihrem Konto gespeicherte Adresse gesendet. Wenn Sie keine E-Mail erhalten, wurde Ihr Konto oder Ihre E-Mail-Adresse nicht gefunden.</target>
+			</trans-unit>
+			<trans-unit id="forgot_reset_message_error" resname="forgot_reset_message_error">
+				<target>Ihr Konto oder Ihre E-Mail-Adresse existiert nicht.</target>
+			</trans-unit>
+			<trans-unit id="forgot_header_backToLogin" resname="forgot_header_backToLogin">
+				<target>Zurück zum Anmeldeformular</target>
+			</trans-unit>
+			<trans-unit id="enter_your_data" resname="enter_your_data">
+				<target>Benutzername oder E-Mail Adresse</target>
+			</trans-unit>
+			<trans-unit id="password_recovery_mail_header" resname="password_recovery_mail_header">
+				<target>Ihr neues Passwort</target>
+			</trans-unit>
+			<trans-unit id="password_recovery_link" resname="password_recovery_link">
+				<target>Link zur Wiederherstellung des Passworts</target>
+			</trans-unit>
+			<trans-unit id="password_recovery_link_expired" resname="password_recovery_link_expired">
+				<target>Der Link zur Wiederherstellung Ihres Passworts ist abgelaufen.</target>
+			</trans-unit>
+			<trans-unit id="empty_password_and_password_repeat" resname="empty_password_and_password_repeat">
+				<target>Neues Passwort und Wiederholung des neuen Passworts dürfen nicht leer sein</target>
+			</trans-unit>
+			<trans-unit id="password_must_match_repeated" resname="password_must_match_repeated">
+				<target>Das neue Passwort muss mit dem wiederholten Passwort übereinstimmen.</target>
+			</trans-unit>
+			<trans-unit id="forgot_validate_reset_password_html" resname="forgot_validate_reset_password_html" xml:space="preserve">
+				<target>&lt;p&gt;Dear %s,&lt;/p&gt;
+&lt;p&gt;Diese E-Mail wurde als Antwort auf Ihre Anfrage, Ihr Passwort zurückzusetzen, gesendet. Bitte klicken Sie auf den untenstehenden Link.&lt;/p&gt;
+&lt;p&gt;%s&lt;/p&gt;
+&lt;p&gt;Aus Sicherheitsgründen ist dieser Link nur so lange aktiv, bis %s. Wenn Sie den Link nicht vorher besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.&lt;/p&gt;
+				</target>
+			</trans-unit>
+			<trans-unit id="forgot_validate_reset_password_plaintext" resname="forgot_validate_reset_password" xml:space="preserve">
+				<target>Hallo %s,
+
+Diese E-Mail wurde als Antwort auf Ihre Anfrage, Ihr Passwort zurückzusetzen, gesendet. Bitte klicken Sie auf den untenstehenden Link.
+%s
+
+Aus Sicherheitsgründen ist dieser Link nur so lange aktiv, bis %s. Wenn Sie den Link nicht vorher besuchen, müssen Sie die Schritte zum Zurücksetzen des Passworts wiederholen.</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

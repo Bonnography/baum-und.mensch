@@ -1,0 +1,23 @@
+.teaser {
+  .card {
+    padding: 10px;
+    margin-bottom: 20px;
+    background: #F9F9F9;
+    border-top: 3px solid #c0c0c0;
+
+    a {
+      &:hover {
+
+      }
+    }
+  }
+  .image-container {
+    margin-bottom: 10px;
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 100%;
+      object-fit: cover;
+    }
+  }
+}

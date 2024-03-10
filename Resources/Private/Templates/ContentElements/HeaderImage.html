@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <div class="header-image">
+        <f:if condition="{images}">
+            <f:then>
+                <f:for each="{images}" as="image">
+                    <f:media
+                            class="img-fluid"
+                            file="{image}"
+                            width="{dimensions.width}"
+                            height="{dimensions.height}"
+                            alt="{image.alternative}"
+                            title="{image.title}"
+                            additionalAttributes="{srcset: '{f:uri.image(image: image, maxWidth: 768)} 768w,
+                                    {f:uri.image(image: image, maxWidth: 990)} 990w,
+                                    {f:uri.image(image: image, maxWidth: 1200)} 1200w,
+                                    {f:uri.image(image: image, maxWidth: 1440)} 1440w,
+                                    {f:uri.image(image: image, maxWidth: 1900)} 1900w',
+                           sizes: '(min-width: 1200px) 50vw, 100vw'}"
+                    />
+                </f:for>
+            </f:then>
+        </f:if>
+    </div>
+</f:section>
+</html>

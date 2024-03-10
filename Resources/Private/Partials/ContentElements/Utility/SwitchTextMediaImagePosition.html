@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{type} == 'media'">
+    <f:then>
+        <f:switch expression="{data.imageorient}">
+            <f:case value="0">col-12</f:case>
+            <f:case value="8">col-12 order-sm-2</f:case>
+            <f:case value="25">
+                col-12 col-md-6 order-sm-2 pr-0 d-flex justify-content-end
+            </f:case>
+            <f:case value="26">
+                <f:if condition="{data.textmedia_Image_Mobile_Top}">
+                    <f:then>
+                        col-12 col-md-6 order-md-1 pl-0
+                    </f:then>
+                    <f:else>
+                        col-12 order-2 col-md-6 order-md-1 pl-0
+                    </f:else>
+                </f:if>
+            </f:case>
+        </f:switch>
+    </f:then>
+</f:if>
+</html>

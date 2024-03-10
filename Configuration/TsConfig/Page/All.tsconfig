@@ -1,0 +1,39 @@
+#
+# PageTS for CB Template
+#
+# set some tt_content default options
+TCAdefaults {
+    tt_content {
+        header_layout = 1
+        imagecols = 1
+    }
+}
+
+mod {
+    web_list {
+        enableDisplayBigControlPanel = activated
+        enableDisplayThumbnails = activated
+        enableClipBoard = selectable
+    }
+    file_list {
+        enableDisplayBigControlPanel = activated
+        enableDisplayThumbnails = activated
+        enableClipBoard = selectable
+    }
+    SHARED {
+        colPos_list = 0,5,10,15,40,45,50,55,60
+    }
+    web_layout {
+        hideRestrictedCols = 1
+    }
+}
+
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cb_template/Configuration/TsConfig/Page/RTE.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cb_template/Configuration/TsConfig/Page/TCEFORM.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cb_template/Configuration/TsConfig/Page/TCEMAIN.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cb_template/Configuration/TsConfig/Page/Mod/WebLayout/BackendLayouts.tsconfig">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:cb_template/Configuration/TsConfig/Page/CacheTags/ClearCache.tsconfig">
+
+#Content Elements
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cb_template/Configuration/TsConfig/Page/ContentElements" extensions="tsconfig">
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:cb_template/Configuration/TsConfig/Page/Plugins" extensions="tsconfig">

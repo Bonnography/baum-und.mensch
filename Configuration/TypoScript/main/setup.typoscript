@@ -1,0 +1,45 @@
+#
+# parseFunc_RTE
+#
+# #####
+@import 'EXT:cb_template/Configuration/TypoScript/libs/misc/parseFunc_RTE.typoscript'
+
+#
+# snippets
+#
+# #####
+@import 'EXT:cb_template/Configuration/TypoScript/libs/misc/logo.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/misc/menus.typoscript'
+
+#
+# tt_content rendering
+#
+# #####
+
+@import 'EXT:cb_template/Configuration/TypoScript/libs/tt_content/tt_content.typoscript'
+
+#
+# config
+#
+# ####
+
+@import 'EXT:cb_template/Configuration/TypoScript/config.typoscript'
+
+#
+# sections
+#
+# ####
+
+@import 'EXT:cb_template/Configuration/TypoScript/libs/sections/02-headerData.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/sections/03-header.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/sections/04-content.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/sections/05-footer.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/sections/01-default.typoscript'
+
+#
+# plugins
+#
+# ####
+
+@import 'EXT:cb_template/Configuration/TypoScript/plugins/setup.typoscript'
+@import 'EXT:cb_template/Configuration/TypoScript/libs/misc/lang.typoscript'

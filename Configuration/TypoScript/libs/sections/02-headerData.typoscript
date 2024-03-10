@@ -1,0 +1,66 @@
+#
+# part for some additional header data configs
+#
+# ####
+lib.og-canonical = TEXT
+lib.og-canonical {
+    typolink {
+        parameter.data = field: content_from_pid // TSFE:id
+        addQueryString = 1
+        addQueryString.method = GET
+        addQueryString.exclude = type
+        useCacheHash = 0
+        returnLast = url
+        forceAbsoluteUrl = 1
+    }
+}
+
+#default is summary; set by MetaTagAPI. In V10 page property
+page.meta.twitter:card = summary_large_image
+page.meta.twitter:card.replace = 1
+
+page.meta.keywords.field = keywords
+page.meta.keywords.ifEmpty =
+
+page.meta.abstract.field = abstract
+page.meta.abstract.ifEmpty =
+
+page.meta.og:type = website
+page.meta.og:url < lib.og-canonical
+
+page.shortcutIcon = {$company.favicon}
+
+lib.header-Data = COA
+lib.header-Data {
+    10 = COA
+    10 {
+        10 = TEXT
+        10.value = <meta name="viewport" content="width=device-width, initial-scale=1">
+        20 = TEXT
+        20.value = <meta name="HandheldFriendly" content="true"/>
+        30 = TEXT
+        30.value = <meta name="MobileOptimized" content="360"/>
+    }
+
+    20 = TEXT
+    20 {
+        data = TSFE:altPageTitle // field:seo_title // page:title // field:subtitle // register:title // field:title
+        stripHtml = 1
+        htmlSpecialChars = 1
+        wrap = <title>|</title>
+    }
+
+    25 = FLUIDTEMPLATE
+    25 {
+        file = EXT:cb_template/Resources/Private/Templates/Page/HeadIcons.html
+    }
+}
+[applicationContext == 'Development' || 'Development/Testing' || 'Development/Staging']
+    page {
+        meta {
+            robots   = noindex,nofollow
+        }
+    }
+[end]
+
+
