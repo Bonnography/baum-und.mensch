@@ -16053,7 +16053,7 @@ p ul, .text-bodytext ul
 
 body
 {
-   font-family: "Outfit Normal Regular", Sans-Serif;
+   font-family: "Poppins Regular", Sans-Serif;
    font-size: 16px;
    overflow-x: hidden;
    height: 100%;
@@ -16567,147 +16567,63 @@ a:hover
 /*
  * misc
  */
-/* outfit-100 - latin */
+/* poppins-300 - latin */
 @font-face
 {
    font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 100';
-  font-style: normal;
-  font-weight: 100;
-  src: url("../fonts/outfit-v11-latin-100.woff2") format("woff2");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit-200 - latin */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 200';
-  font-style: normal;
-  font-weight: 200;
-  src: url("../fonts/outfit-v11-latin-200.woff2") format("woff2");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit-300 - latin */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 300';
+  font-family: 'Poppins Thin';
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/outfit-v11-latin-300.woff2") format("woff2");
+  src: url("../fonts/poppins-v20-latin-300.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
 }
 
-/* outfit-regular - latin */
+/* poppins-regular - latin */
 @font-face
 {
    font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 400';
+  font-family: 'Poppins Regular';
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/outfit-v11-latin-regular.woff2") format("woff2");
+  src: url("../fonts/poppins-v20-latin-regular.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
 }
 
-/* outfit-500 - latin */
+/* poppins-italic - latin */
 @font-face
 {
    font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 500';
-  font-style: normal;
-  font-weight: 500;
-  src: url("../fonts/outfit-v11-latin-500.woff2") format("woff2");
+  font-family: 'Poppins Italic';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/poppins-v20-latin-italic.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
 }
 
-/* outfit-600 - latin */
+/* poppins-700 - latin */
 @font-face
 {
    font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit Regular';
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/outfit-v11-latin-600.woff2") format("woff2");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit-700 - latin */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 700';
+  font-family: 'Poppins Semibold';
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/outfit-v11-latin-700.woff2") format("woff2");
+  src: url("../fonts/poppins-v20-latin-700.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
 }
 
-/* outfit-800 - latin */
+/* poppins-900 - latin */
 @font-face
 {
    font-display: swap;
   /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 800';
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/outfit-v11-latin-800.woff2") format("woff2");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit-900 - latin */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit 900';
+  font-family: 'Poppins Bold';
   font-style: normal;
   font-weight: 900;
-  src: url("../fonts/outfit-v11-latin-900.woff2") format("woff2");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit regular */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit Normal Regular';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/OutfitRegular.woff") format("woff");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit normal semibold */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit Normal Semibold';
-  font-style: normal;
-  font-weight: 600;
-  src: url("../fonts/OutfitSemiBold.woff") format("woff");
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
-}
-
-/* outfit normal bold */
-@font-face
-{
-   font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Outfit Normal Bold';
-  font-style: normal;
-  font-weight: 800;
-  src: url("../fonts/OutfitBold.woff") format("woff");
+  src: url("../fonts/poppins-v20-latin-900.woff2") format("woff2");
   /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */;
 }
 
@@ -16716,14 +16632,14 @@ h1, .h1
    font-size: 2.25rem;
    margin-bottom: 40px;
    line-height: 1.3;
-   font-family: "Outfit Normal Semibold", Sans-Serif;
+   font-family: "Poppins Semibold", Sans-Serif;
 }
 
 h2, .h2
 {
    font-size: 1.75rem;
    margin-bottom: 40px;
-   font-family: "Outfit Normal Semibold", Sans-Serif;
+   font-family: "Poppins Semibold", Sans-Serif;
 }
 
 h3, .h3
@@ -18419,7 +18335,8 @@ footer {
     height: 38px;
     margin-left: 20px; }
   footer #copyright {
-    font-size: 14px; }
+    font-size: 14px;
+    color: #fff; }
     footer #copyright p {
       margin-bottom: 0; }
 

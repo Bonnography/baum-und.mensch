@@ -13,11 +13,12 @@ html {
   scroll-padding-top: 80px;
 }
 
-$outfit-regular: 'Outfit Normal Regular', Sans-Serif;
-$outfit-semibold: 'Outfit Normal Semibold', Sans-Serif;
-$outfit-bold: 'Outfit Normal Bold', Sans-Serif;
+$main-font: 'Poppins Regular', Sans-Serif;
+$main-font-thin: 'Poppins Thin', Sans-Serif;
+$main-font-semibold: 'Poppins Semibold', Sans-Serif;
+$main-font-bold: 'Poppins Bold', Sans-Serif;
 
-$amici-blue: #080232;
+
 $amici-bright-blue: #d7d3eb;
 $amici-orange: #ff7f00;
 $main-color: #18511A;
@@ -38,7 +39,7 @@ p, .text-bodytext {
 }
 
 body {
-  font-family: $outfit-regular;
+  font-family: $main-font;
   font-size: 16px;
   overflow-x: hidden;
   height: 100%;
