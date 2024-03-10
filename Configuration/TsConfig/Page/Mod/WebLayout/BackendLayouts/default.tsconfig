@@ -38,7 +38,7 @@ mod {
                         }
                     }
                 }
-                icon = EXT:cb_template/Resources/Public/Images/BackendLayouts/default.png
+                icon = EXT:cb_template/Resources/Public/images/backend/default-layout.svg
             }
         }
     }

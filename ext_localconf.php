@@ -21,11 +21,3 @@ ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:E
 ExtensionManagementUtility::addUserTSConfig(
     "@import 'EXT:cb_template/Configuration/TsConfig/User/*.tsconfig'"
 );
-ExtensionUtility::configurePlugin(
-    'CbTemplate',
-    // arbitrary, but unique plugin name (not visible in the backend)
-    'ConcertsDb',
-    [
-        \CodebombWebsolutions\CbTemplate\Controller\ConcertsController::class => 'list, old'
-    ],
-);

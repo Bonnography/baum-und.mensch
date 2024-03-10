@@ -5,7 +5,7 @@ mod {
     web_layout {
         BackendLayouts {
             news {
-                title = LLL:EXT:cb_template/Resources/Private/Language/locallang_be.xlf:backend_layout.default
+                title = LLL:EXT:cb_template/Resources/Private/Language/locallang_be.xlf:backend_layout.news
                 config {
                     backend_layout {
                         colCount = 1
