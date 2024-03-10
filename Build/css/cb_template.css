@@ -16095,7 +16095,7 @@ a
 
 a:hover
 {
-   color: #080232;
+   color: #18511A;
    transition: color .4s;
    text-decoration: none;
 }
@@ -16781,10 +16781,10 @@ p h2, p .h2
 
 .btn.btn-primary
 {
-   background: #080232;
+   background: #18511A;
    color: #fff;
    border-radius: 0;
-   border: 1px solid #080232;
+   border: 1px solid #18511A;
    padding: 8px 10px;
 }
 
@@ -16796,8 +16796,8 @@ p h2, p .h2
 
 .btn-secondary
 {
-   border: 1px solid #080232;
-   color: #080232;
+   border: 1px solid #18511A;
+   color: #18511A;
    transition: all .6s;
    border-radius: 0;
    padding: 8px 10px;
@@ -16870,7 +16870,7 @@ p:last-child
 .content.news .news-wrapper:after
 {
    content: "";
-   background: rgba(8, 2, 50, 0.5);
+   background: rgba(24, 81, 26, 0.5);
    position: absolute;
    bottom: 0;
    left: 0;
@@ -17217,7 +17217,7 @@ p:last-child
   line-height: 1.5;
   color: #495057; }
   .concerts-filter:focus, .concerts-filter:focus-visible {
-    border: 1px solid rgba(8, 2, 50, 0.6);
+    border: 1px solid rgba(24, 81, 26, 0.6);
     outline: 0; }
 
 .article-concert {
@@ -17281,7 +17281,7 @@ p:last-child
     transform: rotate(180deg); }
   .article-concert:after {
     content: "";
-    background: rgba(8, 2, 50, 0.5);
+    background: rgba(24, 81, 26, 0.5);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -17997,7 +17997,7 @@ iframe.wait-autoplay {
 * === COMPONENTS ===
 */
 .bg-amici-blue {
-  background: #080232;
+  background: #18511A;
   position: relative;
   color: #fff; }
   .bg-amici-blue:before {
@@ -18012,7 +18012,7 @@ iframe.wait-autoplay {
     height: 100%;
     position: absolute;
     top: 0;
-    background-color: #080232; }
+    background-color: #18511A; }
 
 .bg-amici-bright-blue {
   background: #d7d3eb;
@@ -18041,7 +18041,7 @@ iframe.wait-autoplay {
   margin-bottom: 25px; }
 
 .background-dark-blue {
-  background: #080232;
+  background: #18511A;
   color: #fff;
   padding: 5px 10px; }
 
@@ -18089,7 +18089,7 @@ iframe.wait-autoplay {
     width: 100%;
     left: 0; }
   .header .menu-main-wrapper {
-    background: #080232;
+    background: #18511A;
     display: flex;
     align-items: center;
     height: 80px; }
@@ -18120,7 +18120,7 @@ nav#menu-main {
   z-index: 999;
   left: 0;
   width: 100%;
-  background: #080232;
+  background: #18511A;
   color: #fff;
   transition: opacity .3s,transform .3s;
   top: 80px;
@@ -18274,7 +18274,7 @@ nav#menu-main {
     display: flex;
     justify-content: end;
     align-items: center;
-    background: #080232;
+    background: #18511A;
     transition: unset;
     opacity: 1;
     transform: translateY(0); }
@@ -18323,7 +18323,7 @@ nav#menu-main {
           visibility: unset;
           width: 200px;
           padding-left: 0;
-          background: #080232;
+          background: #18511A;
           text-align: center;
           left: 50%;
           transform: translate(-50%); }
@@ -18377,7 +18377,7 @@ nav#menu-main {
         display: inline-block; }
         .menu-language__list-item a {
           text-decoration: none;
-          color: #080232; }
+          color: #18511A; }
           .menu-language__list-item a:hover {
             color: #ff7f00; } }
 
@@ -18734,7 +18734,7 @@ input:-moz-placeholder {
     -moz-appearance: auto;
     appearance: auto; }
     .amici-contaktform .input .form-control:focus, .amici-registrationform .input .form-control:focus, .loginform .input .form-control:focus {
-      border-color: #080232;
+      border-color: #18511A;
       box-shadow: unset;
       outline: 0; }
   .amici-contaktform .input .form-check .declaration .form-check-input, .amici-registrationform .input .form-check .declaration .form-check-input, .loginform .input .form-check .declaration .form-check-input {

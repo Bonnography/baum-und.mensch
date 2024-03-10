@@ -6,10 +6,10 @@
   cursor: pointer;
 }
 .btn.btn-primary {
-  background: $amici-blue;
+  background: $main-color;
   color: #fff;
   border-radius: 0;
-  border: 1px solid $amici-blue;
+  border: 1px solid $main-color;
   padding: 8px 10px;
 
   &:hover, &:active {
@@ -19,8 +19,8 @@
 }
 
 .btn-secondary {
-  border: 1px solid $amici-blue;
-  color: $amici-blue;
+  border: 1px solid $main-color;
+  color: $main-color;
   transition: all .6s;
   border-radius: 0;
   padding: 8px 10px;

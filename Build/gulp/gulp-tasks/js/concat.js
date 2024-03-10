@@ -45,22 +45,6 @@ function jsMain() {
         .pipe(gulp.dest(config.target.js));
 }
 
-function jsForm() {
-    return gulp.src(config.source.formJs)
-        .pipe($.uglify({
-            compress: {
-                unused: false
-            }
-        }))
-        .pipe($.rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(config.target.formJs))
-        .pipe($.gzip())
-        .pipe(gulp.dest(config.target.formJs));
-}
-
-
 function jsLint () {
     return gulp.src(config.source.mainJS)
         .pipe($.eslint('../.eslintrc'))
@@ -68,5 +52,5 @@ function jsLint () {
         .pipe($.eslint.failAfterError())
 }
 
-const js = gulp.series(jsLint, gulp.parallel(jsConcat, jsMain, jsForm));
+const js = gulp.series(jsLint, gulp.parallel(jsConcat, jsMain));
 exports.js = js;
