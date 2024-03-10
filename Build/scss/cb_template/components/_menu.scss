@@ -6,8 +6,8 @@ nav#menu-main {
   z-index: 999;
   left: 0;
   width: 100%;
-  background: $main-color;
-  color: #fff;
+  background: #fff;
+  color: $text-color;
   transition: opacity .3s,transform .3s;
   top: 80px;
   height: calc(100vh - 80px);
@@ -38,22 +38,13 @@ nav#menu-main {
         display: block;
         width: 100%;
         padding: 15px 60px;
-        color: #fff;
+        color: $text-color;
         text-decoration: none;
-
-
-        &.special-menu-link {
-          width: 100%;
-          padding: 15px 5px;
-          color: $accent-color;
-          text-decoration: none;
-          display: block;
-        }
       }
 
       &.active {
         .menu-main_item__link {
-          color: $amici-orange;
+          color: $main-color;
         }
       }
       .w-submenu__opener {
@@ -92,13 +83,13 @@ nav#menu-main {
           padding: 15px 5px;
 
           a {
-            color: #000;
+            color: $text-color;
             text-decoration: none;
           }
 
           &.active {
             a.lvl2 {
-              color: $amici-orange;
+              color: $main-color;
             }
           }
 
@@ -118,7 +109,7 @@ nav#menu-main {
           &-item {
             &.active {
               a {
-                color: $amici-orange;
+                color: $main-color;
               }
             }
           }
@@ -148,7 +139,7 @@ nav#menu-main {
       position: absolute;
       height: 4px;
       width: 50%;
-      background: #fff;
+      background: $text-color;
       opacity: 1;
       transform: rotate(0deg);
       transition: .25s ease-in-out;
@@ -226,7 +217,7 @@ nav#menu-main {
       }
 
       span {
-        background: #fff;
+        background: $text-color;
       }
     }
   }
@@ -250,7 +241,7 @@ nav#menu-main {
     display: flex;
     justify-content: end;
     align-items: center;
-    background: $main-color;
+    background: #fff;
     transition: unset;
     opacity: 1;
     transform: translateY(0);
@@ -271,7 +262,7 @@ nav#menu-main {
 
         a.menu-main_item__link {
           padding: 10px 20px;
-          color: #fff;
+          color: $text-color;
           position: relative;
           transition: all .4s;
           text-decoration: none;
@@ -280,7 +271,7 @@ nav#menu-main {
 
         &.active {
           a.menu-main_item__link {
-            color: $hover-color;
+            color: $main-color;
           }
         }
 
@@ -321,17 +312,17 @@ nav#menu-main {
             visibility: unset;
             width: 200px;
             padding-left: 0;
-            background: $main-color;
+            background: #fff;
             text-align: center;
             left: 50%;
             transform: translate(-50%);
 
             .menu-main__sub-item_link {
-              color: #fff;
+              color: $text-color;
             }
             &-item.active {
               .menu-main__sub-item_link {
-                color: $amici-orange;
+                color: $main-color;
               }
             }
           }

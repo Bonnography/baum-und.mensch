@@ -18006,7 +18006,7 @@ iframe.wait-autoplay {
     width: 100%;
     left: 0; }
   .header .menu-main-wrapper {
-    background: #18511A;
+    background: #fff;
     display: flex;
     align-items: center;
     height: 80px; }
@@ -18037,8 +18037,8 @@ nav#menu-main {
   z-index: 999;
   left: 0;
   width: 100%;
-  background: #18511A;
-  color: #fff;
+  background: #fff;
+  color: #4a4a4a;
   transition: opacity .3s,transform .3s;
   top: 80px;
   height: calc(100vh - 80px);
@@ -18062,16 +18062,10 @@ nav#menu-main {
         display: block;
         width: 100%;
         padding: 15px 60px;
-        color: #fff;
+        color: #4a4a4a;
         text-decoration: none; }
-        nav#menu-main .menu-main__list .menu-main_item__link.special-menu-link {
-          width: 100%;
-          padding: 15px 5px;
-          color: #ff0000;
-          text-decoration: none;
-          display: block; }
       nav#menu-main .menu-main__list .menu-main_item.active .menu-main_item__link {
-        color: #ff7f00; }
+        color: #18511A; }
       nav#menu-main .menu-main__list .menu-main_item .w-submenu__opener {
         position: absolute;
         background-image: url('data:image/svg+xml,<%3Fxml version="1.0" encoding="UTF-8" standalone="no"%3F><svg width="800px" height="800px" viewBox="0 -4.5 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"><title>chevron-down</title><desc>Created with Sketch Beta.</desc><defs></defs><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-574.000000, -1201.000000)" fill="%23ffffff"><path d="M597.405,1201.63 C596.576,1200.8 595.23,1200.8 594.401,1201.63 L586.016,1210.88 L577.63,1201.63 C576.801,1200.8 575.455,1200.8 574.626,1201.63 C573.797,1202.46 573.797,1203.81 574.626,1204.64 L584.381,1215.4 C584.83,1215.85 585.429,1216.05 586.016,1216.01 C586.603,1216.05 587.201,1215.85 587.65,1215.4 L597.405,1204.64 C598.234,1203.81 598.234,1202.46 597.405,1201.63" id="chevron-down" sketch:type="MSShapeGroup"></path></g></g></svg>');
@@ -18099,10 +18093,10 @@ nav#menu-main {
           list-style: none;
           padding: 15px 5px; }
           nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-item a {
-            color: #000;
+            color: #4a4a4a;
             text-decoration: none; }
           nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-item.active a.lvl2 {
-            color: #ff7f00; }
+            color: #18511A; }
         nav#menu-main .menu-main__list .menu-main_item .menu-main__sub.open {
           transition: max-height 2s ease-out;
           max-height: 900px;
@@ -18112,7 +18106,7 @@ nav#menu-main {
           padding-left: 0;
           list-style: none; }
           nav#menu-main .menu-main__list .menu-main_item .menu-main__sub-sub-item.active a {
-            color: #ff7f00; }
+            color: #18511A; }
 
 /*
  * Menu Trigger
@@ -18132,7 +18126,7 @@ nav#menu-main {
       position: absolute;
       height: 4px;
       width: 50%;
-      background: #fff;
+      background: #4a4a4a;
       opacity: 1;
       transform: rotate(0deg);
       transition: .25s ease-in-out; }
@@ -18175,7 +18169,7 @@ nav#menu-main {
       left: calc(50% - 6px);
       top: 12px; }
     #menu-main-trigger #nav-icon.open span {
-      background: #fff; }
+      background: #4a4a4a; }
 
 .header-small #menu-main {
   height: calc(100vh - 60px);
@@ -18191,7 +18185,7 @@ nav#menu-main {
     display: flex;
     justify-content: end;
     align-items: center;
-    background: #18511A;
+    background: #fff;
     transition: unset;
     opacity: 1;
     transform: translateY(0); }
@@ -18207,13 +18201,13 @@ nav#menu-main {
           padding-right: 0; }
         nav#menu-main ul.menu-main__list li.menu-main_item a.menu-main_item__link {
           padding: 10px 20px;
-          color: #fff;
+          color: #4a4a4a;
           position: relative;
           transition: all .4s;
           text-decoration: none;
           font-size: 1.1rem; }
         nav#menu-main ul.menu-main__list li.menu-main_item.active a.menu-main_item__link {
-          color: #ff7f00; }
+          color: #18511A; }
         nav#menu-main ul.menu-main__list li.menu-main_item .menu-main__sub {
           position: absolute;
           transition: all .4s;
@@ -18240,14 +18234,14 @@ nav#menu-main {
           visibility: unset;
           width: 200px;
           padding-left: 0;
-          background: #18511A;
+          background: #fff;
           text-align: center;
           left: 50%;
           transform: translate(-50%); }
           nav#menu-main ul.menu-main__list li.menu-main_item:hover .menu-main__sub .menu-main__sub-item_link {
-            color: #fff; }
+            color: #4a4a4a; }
           nav#menu-main ul.menu-main__list li.menu-main_item:hover .menu-main__sub-item.active .menu-main__sub-item_link {
-            color: #ff7f00; }
+            color: #18511A; }
         nav#menu-main ul.menu-main__list li.menu-main_item.w-submenu .menu-main_item__link {
           padding: 10px 30px 10px 10px; }
         nav#menu-main ul.menu-main__list li.menu-main_item.w-submenu:hover .w-submenu__opener {
